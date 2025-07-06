@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
@@ -258,10 +259,7 @@ function Footer() {
           <div>
             <h6 className="font-semibold text-deep-blue mb-4">Quick Links</h6>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="#" className="hover:text-saffron transition-colors">About BAPS</a></li>
-              <li><a href="#" className="hover:text-saffron transition-colors">Find a Temple</a></li>
-              <li><a href="#" className="hover:text-saffron transition-colors">Events & Programs</a></li>
-              <li><a href="#" className="hover:text-saffron transition-colors">Contact Us</a></li>
+              <li><a href="https://baps.org" target="_blank" rel="noopener noreferrer" className="hover:text-saffron transition-colors">About BAPS</a></li>
             </ul>
           </div>
           
@@ -270,9 +268,11 @@ function Footer() {
             <p className="text-gray-600 text-sm mb-4">
               Having trouble finding a temple or need assistance? Contact our support team.
             </p>
-            <Button className="bg-saffron hover:bg-orange-600 text-white">
-              Get Support
-            </Button>
+            <Link to="/support">
+              <Button className="bg-saffron hover:bg-orange-600 text-white">
+                Get Support
+              </Button>
+            </Link>
           </div>
         </div>
         

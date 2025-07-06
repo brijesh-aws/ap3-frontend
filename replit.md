@@ -94,6 +94,12 @@ This is a full-stack web application for finding BAPS temples based on location.
 
 ## Changelog
 - July 06, 2025. Initial setup
+- July 06, 2025. Updated navigation and branding:
+  - Replaced Om symbol with official BAPS logo throughout interface
+  - Modified footer navigation: "About BAPS" now redirects to baps.org
+  - Removed "Find a Temple", "Events & Programs", and "Contact Us" links
+  - Created new /support page with team contact information
+  - Added support team: Anssh Prajapati, Pujan Patel, Shail Patel with contact details
 
 ## User Preferences
 
