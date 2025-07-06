@@ -1,0 +1,100 @@
+# BAPS Temple Finder
+
+## Overview
+
+This is a full-stack web application for finding BAPS temples based on location. Users can search for temples by zip code or current location, view temple details, and get directions. The application features a modern React frontend with a Node.js/Express backend and uses PostgreSQL for data storage.
+
+## System Architecture
+
+### Frontend Architecture
+- **Framework**: React 18 with TypeScript
+- **Build Tool**: Vite for fast development and optimized builds
+- **UI Framework**: Shadcn/ui components built on Radix UI primitives
+- **Styling**: Tailwind CSS with custom BAPS theme colors
+- **State Management**: TanStack Query for server state management
+- **Routing**: Wouter for lightweight client-side routing
+
+### Backend Architecture
+- **Runtime**: Node.js with Express.js framework
+- **Language**: TypeScript with ES modules
+- **Database**: PostgreSQL with Drizzle ORM
+- **Data Storage**: In-memory storage with fallback to database
+- **API Design**: RESTful API endpoints
+
+## Key Components
+
+### Database Schema
+- **temples** table with fields: id, city, address, phone, fax, email, operating_hours, operating_days, latitude, longitude
+- Uses Drizzle ORM for type-safe database operations
+- Configured for PostgreSQL with connection pooling via @neondatabase/serverless
+
+### API Endpoints
+- `GET /api/temples` - Retrieve all temples
+- `GET /api/temples/:id` - Get specific temple by ID
+- `POST /api/temples/search` - Search temples by location (zip code or coordinates)
+
+### Frontend Components
+- **SearchInterface**: Handles zip code and geolocation-based searches
+- **TempleCard**: Displays temple information in a card format
+- **TempleModal**: Shows detailed temple information in a modal
+- **LoadingState/ErrorState**: User feedback components
+
+### Location Services
+- Geolocation API for current location detection
+- Zip code validation and geocoding
+- Distance calculation for temple search results
+
+## Data Flow
+
+1. **User Input**: User enters zip code or requests current location
+2. **Location Processing**: Frontend validates input and gets coordinates
+3. **API Request**: Search request sent to backend with location parameters
+4. **Database Query**: Backend queries temple data and calculates distances
+5. **Response Processing**: Results sorted and formatted for display
+6. **UI Update**: Temple cards displayed with sorting and filtering options
+
+## External Dependencies
+
+### Frontend Dependencies
+- React ecosystem (React, React-DOM, React Query)
+- UI components (@radix-ui/react-* packages)
+- Styling (Tailwind CSS, class-variance-authority)
+- Utilities (date-fns, clsx, lucide-react icons)
+
+### Backend Dependencies
+- Express.js framework
+- Drizzle ORM with PostgreSQL driver
+- Database connection (@neondatabase/serverless)
+- Session management (connect-pg-simple)
+- Validation (Zod schemas)
+
+### Development Tools
+- TypeScript for type safety
+- Vite for development and building
+- ESBuild for backend bundling
+- PostCSS for CSS processing
+
+## Deployment Strategy
+
+### Build Process
+- Frontend: Vite builds optimized static assets to `dist/public`
+- Backend: ESBuild bundles server code to `dist/index.js`
+- Database: Drizzle handles schema migrations
+
+### Environment Configuration
+- Development: Uses Vite dev server with Express API
+- Production: Serves static files from Express with API routes
+- Database: Configured via `DATABASE_URL` environment variable
+
+### Scripts
+- `dev`: Development server with hot reload
+- `build`: Production build for both frontend and backend
+- `start`: Production server
+- `db:push`: Apply database schema changes
+
+## Changelog
+- July 06, 2025. Initial setup
+
+## User Preferences
+
+Preferred communication style: Simple, everyday language.
