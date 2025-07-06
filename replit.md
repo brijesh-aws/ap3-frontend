@@ -106,6 +106,13 @@ This is a full-stack web application for finding BAPS temples based on location.
   - Custom temple markers with popup details and distance information
   - Map shows user location and nearby temples with click interactions
   - Responsive layout adapts based on selected view mode
+- July 06, 2025. Added iOS mobile optimizations:
+  - Enhanced HTML with iOS-specific meta tags and web app capabilities
+  - Added touch-friendly input handling with numeric keyboard for zip codes
+  - Implemented iOS-specific CSS for better touch interaction and performance
+  - Added proper viewport settings to prevent zoom on input focus
+  - Created dev.js file for easy local development setup
+  - Optimized map controls for touch devices with proper gesture handling
 
 ## User Preferences
 

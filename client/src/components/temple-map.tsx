@@ -162,6 +162,13 @@ export default function TempleMap({ temples, center, onTempleSelect, selectedTem
         zoom={10}
         style={{ height: '100%', width: '100%' }}
         className="z-0"
+        touchZoom={true}
+        doubleClickZoom={true}
+        scrollWheelZoom={true}
+        boxZoom={true}
+        keyboard={true}
+        dragging={true}
+        zoomControl={true}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

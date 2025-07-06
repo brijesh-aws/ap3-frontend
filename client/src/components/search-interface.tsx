@@ -80,12 +80,16 @@ export default function SearchInterface({ onSearch, isLoading }: SearchInterface
             </div>
             <Input
               type="text"
+              inputMode="numeric"
+              pattern="[0-9]*"
               placeholder="Enter zip code (e.g., 10001)"
               value={zipcode}
               onChange={(e) => setZipcode(e.target.value)}
               onKeyPress={handleKeyPress}
-              className="pl-10 py-3 focus:ring-2 focus:ring-saffron focus:border-saffron"
+              className="pl-10 py-3 text-base focus:ring-2 focus:ring-saffron focus:border-saffron"
               disabled={isLoading}
+              maxLength={5}
+              autoComplete="postal-code"
             />
           </div>
           
@@ -93,7 +97,7 @@ export default function SearchInterface({ onSearch, isLoading }: SearchInterface
             <Button
               onClick={handleZipcodeSearch}
               disabled={isLoading}
-              className="bg-saffron hover:bg-orange-600 text-white px-6 py-3 font-medium"
+              className="bg-saffron hover:bg-orange-600 text-white px-6 py-3 font-medium touch-manipulation"
             >
               {isLoading ? (
                 <>
@@ -110,7 +114,7 @@ export default function SearchInterface({ onSearch, isLoading }: SearchInterface
             <Button
               onClick={handleLocationSearch}
               disabled={isLoading || locationLoading}
-              className="bg-deep-blue hover:bg-blue-700 text-white px-6 py-3 font-medium"
+              className="bg-deep-blue hover:bg-blue-700 text-white px-6 py-3 font-medium touch-manipulation"
             >
               {locationLoading ? (
                 <>
