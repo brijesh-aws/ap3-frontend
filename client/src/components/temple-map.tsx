@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import { LatLngBounds, divIcon } from 'leaflet';
 import type { TempleWithDistance } from '@shared/schema';
+import bapsLogo from '@assets/image_1751840390730.png';
 import 'leaflet/dist/leaflet.css';
 
 // Fix for default markers in React Leaflet
@@ -106,26 +107,32 @@ function getTempleCoordinates(temple: TempleWithDistance): { lat: number; lng: n
   return cityKey ? coordinates[cityKey] : null;
 }
 
-// Custom marker icon for temples
-const templeIcon = divIcon({
-  html: `<div style="
-    background-color: #FF6B35;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 2px solid white;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    color: white;
-    font-weight: bold;
-  ">🕉</div>`,
-  className: 'custom-temple-marker',
-  iconSize: [24, 24],
-  iconAnchor: [12, 24],
-});
+// Create temple icon with BAPS logo
+function createTempleIcon() {
+  return divIcon({
+    html: `<div style="
+      background-color: white;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 3px solid #FF6B35;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    ">
+      <img src="${bapsLogo}" style="
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+      " alt="BAPS" />
+    </div>`,
+    className: 'custom-temple-marker',
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+  });
+}
 
 // User location marker
 const userIcon = divIcon({
@@ -181,7 +188,7 @@ export default function TempleMap({ temples, center, onTempleSelect, selectedTem
             <Marker
               key={temple.id}
               position={[coords.lat, coords.lng]}
-              icon={templeIcon}
+              icon={createTempleIcon()}
               eventHandlers={{
                 click: () => onTempleSelect?.(temple),
               }}
