@@ -100,6 +100,12 @@ This is a full-stack web application for finding BAPS temples based on location.
   - Removed "Find a Temple", "Events & Programs", and "Contact Us" links
   - Created new /support page with team contact information
   - Added support team: Anssh Prajapati, Pujan Patel, Shail Patel with contact details
+- July 06, 2025. Added interactive map integration:
+  - Integrated Leaflet maps with react-leaflet for temple visualization
+  - Added list/map view toggle for flexible temple browsing
+  - Custom temple markers with popup details and distance information
+  - Map shows user location and nearby temples with click interactions
+  - Responsive layout adapts based on selected view mode
 
 ## User Preferences
 
