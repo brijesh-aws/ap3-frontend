@@ -11,6 +11,7 @@ import TempleCard from "@/components/temple-card";
 import TempleModal from "@/components/temple-modal";
 import { apiRequest } from "@/lib/queryClient";
 import type { TempleWithDistance } from "@shared/schema";
+import bapsLogo from "@assets/image_1751840390730.png";
 
 type SortOption = "distance" | "name" | "state";
 
@@ -211,8 +212,8 @@ function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-saffron rounded-full flex items-center justify-center">
-              <span className="text-white text-lg font-bold">ॐ</span>
+            <div className="w-10 h-10 flex items-center justify-center">
+              <img src={bapsLogo} alt="BAPS Logo" className="w-10 h-10 object-contain" />
             </div>
             <div>
               <h1 className="text-xl font-bold text-deep-blue" style={{ fontFamily: 'serif' }}>
@@ -242,8 +243,8 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-8 h-8 bg-saffron rounded-full flex items-center justify-center">
-                <span className="text-white text-sm font-bold">ॐ</span>
+              <div className="w-8 h-8 flex items-center justify-center">
+                <img src={bapsLogo} alt="BAPS Logo" className="w-8 h-8 object-contain" />
               </div>
               <span className="text-lg font-bold text-deep-blue" style={{ fontFamily: 'serif' }}>
                 BAPS
