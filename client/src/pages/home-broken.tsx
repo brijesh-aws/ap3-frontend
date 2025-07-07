@@ -48,10 +48,6 @@ export default function Home() {
     setSearchParams(params);
   };
 
-  const handleRetry = () => {
-    refetch();
-  };
-
   const handleViewDetails = (temple: TempleWithDistance) => {
     setSelectedTemple(temple);
     setShowModal(true);
@@ -62,35 +58,37 @@ export default function Home() {
     setSelectedTemple(null);
   };
 
-  const sortedTemples = temples?.sort((a, b) => {
+  const handleRetry = () => {
+    refetch();
+  };
+
+  const sortedTemples = temples ? [...temples].sort((a, b) => {
     switch (sortBy) {
       case "name":
         return a.city.localeCompare(b.city);
       case "state":
-        const stateA = a.address.split(', ').slice(-1)[0] || '';
-        const stateB = b.address.split(', ').slice(-1)[0] || '';
+        const stateA = a.address.split(",").slice(-2, -1)[0]?.trim() || "";
+        const stateB = b.address.split(",").slice(-2, -1)[0]?.trim() || "";
         return stateA.localeCompare(stateB);
-      default: // distance
+      case "distance":
+      default:
         return a.distance - b.distance;
     }
-  }) || [];
+  }) : [];
 
   if (error) {
     return (
-      <div className="min-h-screen bg-warm-gray flex flex-col">
+      <div className="min-h-screen bg-warm-gray">
         <Header />
-        <main className="flex-1">
-          <div className="py-8">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <SearchInterface onSearch={handleSearch} isLoading={isLoading} />
-            </div>
-            <ErrorState 
-              message="Please check your zip code or try using your current location."
-              onRetry={handleRetry}
-            />
+        <div className="py-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <SearchInterface onSearch={handleSearch} isLoading={isLoading} />
           </div>
-        </main>
-        <Footer />
+          <ErrorState 
+            message="Please check your zip code or try using your current location."
+            onRetry={handleRetry}
+          />
+        </div>
       </div>
     );
   }
@@ -121,94 +119,55 @@ export default function Home() {
                         <div className="flex items-center space-x-4">
                           {/* View Mode Toggle */}
                           <div className="flex items-center space-x-1 bg-gray-100 rounded-lg p-1">
-                            <Button
-                              variant={viewMode === "list" ? "default" : "ghost"}
-                              size="sm"
-                              onClick={() => setViewMode("list")}
-                              className={`px-3 py-1 rounded-md text-sm ${
-                                viewMode === "list" 
-                                  ? "bg-white text-deep-blue shadow-sm" 
-                                  : "text-gray-600 hover:text-deep-blue"
-                              }`}
-                            >
-                              <List className="h-4 w-4 mr-1" />
-                              List
-                            </Button>
-                            <Button
-                              variant={viewMode === "map" ? "default" : "ghost"}
-                              size="sm"
-                              onClick={() => setViewMode("map")}
-                              className={`px-3 py-1 rounded-md text-sm ${
-                                viewMode === "map" 
-                                  ? "bg-white text-deep-blue shadow-sm" 
-                                  : "text-gray-600 hover:text-deep-blue"
-                              }`}
-                            >
-                              <Map className="h-4 w-4 mr-1" />
-                              Map
-                            </Button>
-                          </div>
+                          <Button
+                            variant={viewMode === "list" ? "default" : "ghost"}
+                            size="sm"
+                            onClick={() => setViewMode("list")}
+                            className={viewMode === "list" ? "bg-white shadow-sm" : ""}
+                          >
+                            <List className="h-4 w-4" />
+                          </Button>
+                          <Button
+                            variant={viewMode === "map" ? "default" : "ghost"}
+                            size="sm"
+                            onClick={() => setViewMode("map")}
+                            className={viewMode === "map" ? "bg-white shadow-sm" : ""}
+                          >
+                            <Map className="h-4 w-4" />
+                          </Button>
                         </div>
-                      </div>
-                      
-                      <div className="flex items-center space-x-4 mt-4">
-                        <Filter className="h-4 w-4 text-gray-500" />
-                        <Select value={sortBy} onValueChange={(value: SortOption) => setSortBy(value)}>
-                          <SelectTrigger className="w-48">
-                            <SelectValue placeholder="Sort by..." />
+                        <Select value={sortBy} onValueChange={(value) => setSortBy(value as SortOption)}>
+                          <SelectTrigger className="w-[180px]">
+                            <SelectValue placeholder="Sort by" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="distance">Distance</SelectItem>
-                            <SelectItem value="name">Temple Name</SelectItem>
-                            <SelectItem value="state">State</SelectItem>
+                            <SelectItem value="distance">Sort by Distance</SelectItem>
+                            <SelectItem value="name">Sort by Name</SelectItem>
+                            <SelectItem value="state">Sort by State</SelectItem>
                           </SelectContent>
                         </Select>
+                        <Button variant="ghost" size="sm">
+                          <Filter className="h-4 w-4" />
+                        </Button>
                       </div>
-                    </CardHeader>
-                    
-                    <CardContent className="p-0">
-                      {viewMode === "list" ? (
-                        <div className="divide-y divide-gray-200">
-                          {sortedTemples.map((temple) => (
-                            <div key={temple.id} className="p-6">
-                              <TempleCard 
-                                temple={temple} 
-                                onViewDetails={handleViewDetails}
-                              />
-                            </div>
-                          ))}
-                        </div>
-                      ) : (
-                        <div className="p-6">
-                          {searchParams && (
-                            <TempleMap
-                              temples={sortedTemples}
-                              center={{ 
-                                lat: searchParams.latitude || 39.8283, 
-                                lng: searchParams.longitude || -98.5795 
-                              }}
-                              onTempleSelect={handleViewDetails}
-                              selectedTemple={selectedTemple}
+                    </div>
+                  </CardHeader>
+                  
+                  <CardContent className="p-0">
+                    {viewMode === "list" ? (
+                      <div className="divide-y divide-gray-200">
+                        {sortedTemples.map((temple) => (
+                          <div key={temple.id} className="p-6">
+                            <TempleCard 
+                              temple={temple} 
+                              onViewDetails={handleViewDetails}
                             />
-                          )}
-                        </div>
-                      )}
-                    </CardContent>
-                  </Card>
-                </div>
-                
-                {/* Map Container - Always visible in list mode */}
-                {viewMode === "list" && (
-                  <div className="lg:col-span-1">
-                    <Card className="sticky top-8">
-                      <CardHeader className="border-b border-gray-200">
-                        <CardTitle className="text-lg font-semibold text-deep-blue">
-                          Temple Locations
-                        </CardTitle>
-                      </CardHeader>
-                      
-                      <CardContent className="p-6">
-                        {searchParams ? (
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="p-6">
+                        {searchParams && (
                           <TempleMap
                             temples={sortedTemples}
                             center={{ 
@@ -218,59 +177,87 @@ export default function Home() {
                             onTempleSelect={handleViewDetails}
                             selectedTemple={selectedTemple}
                           />
-                        ) : (
-                          <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center">
-                            <div className="text-center">
-                              <MapPin className="h-12 w-12 text-saffron mx-auto mb-2" />
-                              <p className="text-deep-blue font-medium">Search for Temples</p>
-                              <p className="text-gray-600 text-sm">Enter location to see map</p>
-                            </div>
-                          </div>
                         )}
-                        
-                        <div className="mt-4 space-y-2">
-                          <div className="flex items-center space-x-2 text-sm">
-                            <div className="w-3 h-3 bg-deep-blue rounded-full"></div>
-                            <span className="text-gray-600">Your Location</span>
-                          </div>
-                          <div className="flex items-center space-x-2 text-sm">
-                            <div className="w-3 h-3 bg-saffron rounded-full"></div>
-                            <span className="text-gray-600">BAPS Temples</span>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              </div>
+              
+              {/* Map Container - Always visible */}
+              {viewMode === "list" && (
+                <div className="lg:col-span-1">
+                  <Card className="sticky top-8">
+                    <CardHeader className="border-b border-gray-200">
+                      <CardTitle className="text-lg font-semibold text-deep-blue">
+                        Temple Locations
+                      </CardTitle>
+                    </CardHeader>
+                    
+                    <CardContent className="p-6">
+                      {searchParams ? (
+                        <TempleMap
+                          temples={sortedTemples}
+                          center={{ 
+                            lat: searchParams.latitude || 39.8283, 
+                            lng: searchParams.longitude || -98.5795 
+                          }}
+                          onTempleSelect={handleViewDetails}
+                          selectedTemple={selectedTemple}
+                        />
+                      ) : (
+                        <div className="bg-gray-100 rounded-lg h-96 flex items-center justify-center">
+                          <div className="text-center">
+                            <MapPin className="h-12 w-12 text-saffron mx-auto mb-2" />
+                            <p className="text-deep-blue font-medium">Search for Temples</p>
+                            <p className="text-gray-600 text-sm">Enter location to see map</p>
                           </div>
                         </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                )}
-              </div>
+                      )}
+                      
+                      <div className="mt-4 space-y-2">
+                        <div className="flex items-center space-x-2 text-sm">
+                          <div className="w-3 h-3 bg-deep-blue rounded-full"></div>
+                          <span className="text-gray-600">Your Location</span>
+                        </div>
+                        <div className="flex items-center space-x-2 text-sm">
+                          <div className="w-3 h-3 bg-saffron rounded-full"></div>
+                          <span className="text-gray-600">BAPS Temples</span>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              )}
             </div>
-          )}
-          
-          {temples && temples.length === 0 && (
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="text-center">
-                    <Users className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                    <h3 className="text-lg font-medium text-gray-900 mb-2">No temples found</h3>
-                    <p className="text-gray-600">Try expanding your search radius or check your location.</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          )}
+          </div>
+        )}
+        
+        {temples && temples.length === 0 && (
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <Card>
+              <CardContent className="pt-6">
+                <div className="text-center">
+                  <Users className="h-12 w-12 text-gray-400 mx-auto mb-4" />
+                  <h3 className="text-lg font-medium text-gray-900 mb-2">No temples found</h3>
+                  <p className="text-gray-600">Try expanding your search radius or check your location.</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
         </div>
       </main>
-      
-      <TempleModal 
-        temple={selectedTemple}
-        isOpen={showModal}
-        onClose={handleCloseModal}
-      />
-      
-      <Footer />
-    </div>
-  );
+        
+        <TempleModal 
+          temple={selectedTemple}
+          isOpen={showModal}
+          onClose={handleCloseModal}
+        />
+        
+        <Footer />
+      </div>
+    );
 }
 
 function Header() {
@@ -305,8 +292,8 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 mt-auto">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-white border-t border-gray-200 mt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-3 mb-4">
