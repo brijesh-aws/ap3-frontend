@@ -334,7 +334,7 @@ function Footer() {
               <div className="w-16 h-16 flex items-center justify-center">
                 <img src={bapsLogo} alt="BAPS Logo" className="w-16 h-16 object-contain drop-shadow-lg" />
               </div>
-              <span className="text-xl font-primary font-bold text-gradient tracking-tight drop-shadow-md">
+              <span className="text-xl font-primary font-bold text-amber-900 tracking-tight drop-shadow-md">
                 BAPS
               </span>
             </div>
@@ -344,14 +344,14 @@ function Footer() {
           </div>
           
           <div>
-            <h6 className="font-primary font-semibold text-gradient-divine mb-3 text-base tracking-tight drop-shadow-md">Quick Links</h6>
+            <h6 className="font-primary font-semibold text-amber-900 mb-3 text-base tracking-tight drop-shadow-md">Quick Links</h6>
             <ul className="space-y-1 font-body text-gray-800 text-sm">
               <li><a href="https://baps.org" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600 transition-all hover:underline drop-shadow-md">About BAPS</a></li>
             </ul>
           </div>
           
           <div>
-            <h6 className="font-primary font-semibold text-gradient-divine mb-3 text-base tracking-tight drop-shadow-md">Need Help?</h6>
+            <h6 className="font-primary font-semibold text-amber-900 mb-3 text-base tracking-tight drop-shadow-md">Need Help?</h6>
             <p className="text-gray-800 font-body mb-3 text-sm leading-relaxed drop-shadow-md">
               Having trouble finding a temple or need assistance? Contact our support team.
             </p>
