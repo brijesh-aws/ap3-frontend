@@ -140,6 +140,11 @@ This is a full-stack web application for finding BAPS temples based on location.
   - Added sticky glass navigation header with floating elements and gradient text
   - Implemented comprehensive animation system: fade-in, slide-up, hover effects
   - Applied consistent design tokens and modern spacing throughout application
+- July 07, 2025. Enhanced button styling and visual refinements:
+  - Made button gradients darker for better visual contrast (ocean: indigo-800 to purple-900, mystical: violet-600 to purple-500)
+  - Maintained white text color for optimal readability on darker button backgrounds
+  - Added subtle hovering fog effect around search icon during input focus
+  - Optimized footer spacing and typography for compact, modern appearance
 
 ## User Preferences
 
