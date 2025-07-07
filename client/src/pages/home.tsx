@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import { Filter, MapPin, Menu, Info, Users, Map, List } from "lucide-react";
+import { Filter, MapPin, Info, Users, Map, List } from "lucide-react";
 import SearchInterface from "@/components/search-interface";
 import LoadingState from "@/components/loading-state";
 import ErrorState from "@/components/error-state";
@@ -290,12 +290,11 @@ function Header() {
             </div>
           </div>
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" size="sm">
-              <Info className="h-4 w-4" />
-            </Button>
-            <Button variant="ghost" size="sm">
-              <Menu className="h-4 w-4" />
-            </Button>
+            <Link href="/support">
+              <Button variant="ghost" size="sm">
+                <Info className="h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

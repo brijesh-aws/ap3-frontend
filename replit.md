@@ -126,6 +126,10 @@ This is a full-stack web application for finding BAPS temples based on location.
   - Added temple images to modal detail view with responsive design
   - Implemented error handling for missing or broken image URLs
   - Removed all Expo and React Native mobile components, focusing on web-only application
+- July 07, 2025. Simplified header navigation:
+  - Removed menu bar from top right header
+  - Redirected info icon to support page for streamlined navigation
+  - Cleaned up unused imports and simplified header layout
 
 ## User Preferences
 
