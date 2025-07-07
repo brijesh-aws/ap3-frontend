@@ -186,6 +186,10 @@ button, [role="button"] {
   animation: float 3s ease-in-out infinite;
 }
 
+.animate-slide-down {
+  animation: slideDown 0.8s ease-out;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
@@ -193,6 +197,11 @@ button, [role="button"] {
 
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-40px); }
   to { opacity: 1; transform: translateY(0); }
 }
 

@@ -13,7 +13,7 @@ import TempleModal from "@/components/temple-modal";
 import TempleMap from "@/components/temple-map";
 import { apiRequest } from "@/lib/queryClient";
 import type { TempleWithDistance } from "@shared/schema";
-import bapsLogo from "@assets/image_1751840390730.png";
+import bapsLogo from "@assets/Baps_logo.svg_1751892415072.png";
 
 type SortOption = "distance" | "name" | "state";
 
@@ -275,7 +275,7 @@ export default function Home() {
 
 function Header() {
   return (
-    <header className="glass-nav shadow-divine sticky top-0 z-50">
+    <header className="glass-nav shadow-divine sticky top-0 z-50 animate-slide-down">
       {/* Spiritual Background Patterns */}
       <div className="spiritual-pattern"></div>
       <div className="lotus-accent"></div>
@@ -285,31 +285,24 @@ function Header() {
           <div className="flex items-center space-x-6">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-orange-200 to-yellow-200 rounded-full opacity-20 animate-pulse"></div>
-              <div className="w-16 h-16 flex items-center justify-center animate-float relative z-10">
+              <div className="w-16 h-16 flex items-center justify-center relative z-10">
                 <img src={bapsLogo} alt="BAPS Logo" className="w-16 h-16 object-contain drop-shadow-xl" />
               </div>
             </div>
             <div>
-              <h1 className="text-4xl font-primary font-light tracking-tight">
-                <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-red-500 bg-clip-text text-transparent">
-                  BAPS
-                </span>
-                <span className="ml-2 text-gradient-divine">
-                  Mandir
+              <h1 className="text-4xl font-primary font-bold tracking-tight drop-shadow-lg">
+                <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg">
+                  BAPS Mandir
                 </span>
               </h1>
-              <p className="text-base font-body text-amber-700 tracking-wide font-medium">
-                🕉️ Sacred Temple Locator
+              <p className="text-base font-body text-amber-700 tracking-wide font-medium drop-shadow-sm">
+                Sacred Temple Locator
               </p>
             </div>
           </div>
           <div className="flex items-center space-x-6">
-            <div className="hidden md:flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-orange-100 to-amber-100 rounded-full">
-              <div className="w-3 h-3 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-amber-800">Spiritual Journey</span>
-            </div>
             <Link href="/support">
-              <Button variant="ghost" size="sm" className="button-modern gradient-mystical text-white hover:shadow-mystical px-4 py-2 rounded-xl">
+              <Button variant="ghost" size="sm" className="button-modern gradient-mystical text-white hover:shadow-mystical px-4 py-2 rounded-xl drop-shadow-md">
                 <Info className="h-5 w-5 mr-2" />
                 <span className="hidden sm:inline">Support</span>
               </Button>
@@ -326,37 +319,37 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="gradient-celestial border-t border-white/20 mt-auto shadow-divine backdrop-blur-sm">
+    <footer className="gradient-celestial border-t border-white/20 mt-auto shadow-divine backdrop-blur-sm animate-fade-in">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
             <div className="flex items-center space-x-3 mb-3">
-              <div className="w-8 h-8 flex items-center justify-center animate-float">
+              <div className="w-8 h-8 flex items-center justify-center">
                 <img src={bapsLogo} alt="BAPS Logo" className="w-8 h-8 object-contain drop-shadow-lg" />
               </div>
-              <span className="text-xl font-primary font-light text-gradient tracking-tight">
+              <span className="text-xl font-primary font-bold text-gradient tracking-tight drop-shadow-md">
                 BAPS
               </span>
             </div>
-            <p className="text-gray-700 font-body text-sm leading-relaxed">
+            <p className="text-gray-700 font-body text-sm leading-relaxed drop-shadow-sm">
               Connecting you to spiritual centers worldwide. Find your nearest BAPS temple and join our community.
             </p>
           </div>
           
           <div>
-            <h6 className="font-primary font-light text-gradient-divine mb-3 text-base tracking-tight">Quick Links</h6>
+            <h6 className="font-primary font-semibold text-gradient-divine mb-3 text-base tracking-tight drop-shadow-sm">Quick Links</h6>
             <ul className="space-y-1 font-body text-gray-700 text-sm">
-              <li><a href="https://baps.org" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600 transition-all hover:underline">About BAPS</a></li>
+              <li><a href="https://baps.org" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600 transition-all hover:underline drop-shadow-sm">About BAPS</a></li>
             </ul>
           </div>
           
           <div>
-            <h6 className="font-primary font-light text-gradient-divine mb-3 text-base tracking-tight">Need Help?</h6>
-            <p className="text-gray-700 font-body mb-3 text-sm leading-relaxed">
+            <h6 className="font-primary font-semibold text-gradient-divine mb-3 text-base tracking-tight drop-shadow-sm">Need Help?</h6>
+            <p className="text-gray-700 font-body mb-3 text-sm leading-relaxed drop-shadow-sm">
               Having trouble finding a temple or need assistance? Contact our support team.
             </p>
             <Link to="/support">
-              <Button className="button-modern gradient-ocean text-white px-3 py-1 text-sm rounded-lg shadow-card hover:shadow-mystical transition-all font-semibold">
+              <Button className="button-modern gradient-ocean text-white px-3 py-1 text-sm rounded-lg shadow-card hover:shadow-mystical transition-all font-semibold drop-shadow-md">
                 Get Support
               </Button>
             </Link>
@@ -364,7 +357,7 @@ function Footer() {
         </div>
         
         <div className="border-t border-white/20 mt-4 pt-3 text-center">
-          <p className="font-body text-gray-600 text-sm">&copy; 2025 BAPS. All rights reserved. | Built with respect for spiritual traditions.</p>
+          <p className="font-body text-gray-600 text-sm drop-shadow-sm">&copy; 2025 BAPS. All rights reserved. | Built with respect for spiritual traditions.</p>
         </div>
       </div>
     </footer>

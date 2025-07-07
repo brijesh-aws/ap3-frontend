@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Mail, Phone, ArrowLeft } from "lucide-react";
-import bapsLogo from "@assets/image_1751840390730.png";
+import bapsLogo from "@assets/Baps_logo.svg_1751892415072.png";
 
 export default function Support() {
   const supportTeam = [
@@ -30,14 +30,14 @@ export default function Support() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 flex items-center justify-center animate-float">
+              <div className="w-12 h-12 flex items-center justify-center">
                 <img src={bapsLogo} alt="BAPS Logo" className="w-12 h-12 object-contain drop-shadow-lg" />
               </div>
               <div>
-                <h1 className="text-3xl font-primary font-light text-gradient-divine tracking-tight">
+                <h1 className="text-3xl font-primary font-bold text-gradient-divine tracking-tight drop-shadow-lg">
                   BAPS Mandir
                 </h1>
-                <p className="text-sm font-body text-gray-600 tracking-wide">Support</p>
+                <p className="text-sm font-body text-gray-600 tracking-wide drop-shadow-sm">Support</p>
               </div>
             </div>
             <Link to="/">
@@ -54,10 +54,10 @@ export default function Support() {
       <main className="flex-1 animate-fade-in">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-primary font-light text-gradient mb-6 leading-tight tracking-tight">
+            <h1 className="text-5xl font-primary font-bold text-gradient mb-6 leading-tight tracking-tight drop-shadow-lg">
               Get Support
             </h1>
-            <p className="text-xl text-gray-600 font-body max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-600 font-body max-w-3xl mx-auto leading-relaxed drop-shadow-sm">
               Need help finding a temple or have questions about our locator? 
               Our dedicated support team is here to assist you.
             </p>
@@ -68,7 +68,7 @@ export default function Support() {
               <div key={index} className="card-floating shadow-ethereal interactive-lift animate-slide-up">
                 <div className="p-8">
                   <div className="text-center mb-6">
-                    <h3 className="text-2xl font-display font-semibold text-gradient-divine mb-2">
+                    <h3 className="text-2xl font-display font-bold text-gradient-divine mb-2 drop-shadow-md">
                       {member.name}
                     </h3>
                   </div>
@@ -107,7 +107,7 @@ export default function Support() {
 
           <div className="mt-16 text-center">
             <div className="card-floating shadow-ethereal p-12 gradient-twilight">
-              <h3 className="text-3xl font-display font-semibold text-gradient-divine mb-8">
+              <h3 className="text-3xl font-display font-bold text-gradient-divine mb-8 drop-shadow-lg">
                 Frequently Asked Questions
               </h3>
               <div className="text-left space-y-8 max-w-3xl mx-auto">
