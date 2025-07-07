@@ -293,8 +293,8 @@ function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex items-center justify-between h-24">
           <div className="flex items-center space-x-6">
-            <div className="w-20 h-20 flex items-center justify-center">
-              <img src={bapsLogo} alt="BAPS Logo" className="w-20 h-20 object-contain drop-shadow-xl" />
+            <div className="w-20 h-20 flex items-center justify-center bg-white rounded-lg p-2 shadow-lg">
+              <img src={bapsLogo} alt="BAPS Logo" className="w-full h-full object-contain" />
             </div>
             <div>
               <h1 className="text-4xl font-primary font-bold tracking-tight drop-shadow-lg">
