@@ -104,7 +104,7 @@ export default function Home() {
       
       <Header />
       
-      <main className="flex-1 animate-fade-in">
+      <main className="flex-1 animate-fade-in relative z-10">
         <div className="py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SearchInterface onSearch={handleSearch} isLoading={isLoading} />
@@ -280,7 +280,7 @@ export default function Home() {
 
 function Header() {
   return (
-    <header className="glass-nav shadow-divine sticky top-0 z-50 animate-slide-down">
+    <header className="glass-nav shadow-divine sticky top-0 z-50 animate-slide-down relative">
       {/* Spiritual Background Patterns */}
       <div className="spiritual-pattern"></div>
       <div className="lotus-accent"></div>
