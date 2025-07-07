@@ -96,7 +96,12 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen gradient-app-bg font-primary flex flex-col">
+    <div className="min-h-screen gradient-app-bg font-primary flex flex-col relative">
+      {/* Traditional Background Patterns */}
+      <div className="traditional-bg"></div>
+      <div className="traditional-overlay"></div>
+      <div className="spiritual-corners"></div>
+      
       <Header />
       
       <main className="flex-1 animate-fade-in">
