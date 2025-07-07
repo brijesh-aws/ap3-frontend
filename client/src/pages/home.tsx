@@ -109,7 +109,7 @@ export default function Home() {
       
       <Header />
       
-      <main className="flex-1 animate-fade-in relative z-10">
+      <main className="flex-1 animate-fade-in relative z-20">
         <div className="py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SearchInterface onSearch={handleSearch} isLoading={isLoading} />
