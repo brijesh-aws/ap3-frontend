@@ -81,7 +81,7 @@ export default function Home() {
         <Header />
         <main className="flex-1">
           <div className="py-8">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
               <SearchInterface onSearch={handleSearch} isLoading={isLoading} />
             </div>
             <ErrorState 
@@ -117,7 +117,7 @@ export default function Home() {
           {isLoading && <LoadingState />}
           
           {temples && temples.length > 0 && (
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
               <div className={`grid grid-cols-1 gap-8 ${viewMode === "list" ? "lg:grid-cols-3" : "lg:grid-cols-1"}`}>
                 {/* Results List */}
                 <div className={viewMode === "list" ? "lg:col-span-2" : "lg:col-span-1"}>
