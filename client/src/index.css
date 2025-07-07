@@ -375,11 +375,14 @@ button, [role="button"] {
   left: 0;
   width: 100%;
   height: 60px;
-  background-image: url('/attached_assets/image_1751893306717.png');
+  background: linear-gradient(45deg, rgba(255, 140, 0, 0.3) 0%, rgba(255, 165, 0, 0.2) 100%);
+  background-image: 
+    /* SVG Temple Border Pattern */
+    url("data:image/svg+xml,%3Csvg width='100' height='60' viewBox='0 0 100 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ff8c00' stroke-width='1' opacity='0.6'%3E%3Cpath d='M5 30 C15 20, 25 20, 35 30 C45 20, 55 20, 65 30 C75 20, 85 20, 95 30 C85 40, 75 40, 65 30 C55 40, 45 40, 35 30 C25 40, 15 40, 5 30 Z'/%3E%3Cpath d='M10 30 C20 15, 30 15, 40 30 C50 15, 60 15, 70 30 C80 15, 90 15, 100 30'/%3E%3Cpath d='M0 30 C10 45, 20 45, 30 30 C40 45, 50 45, 60 30 C70 45, 80 45, 90 30'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-position: top center;
   background-size: auto 60px;
-  opacity: 0.3;
+  opacity: 0.4;
   z-index: 1;
   pointer-events: none;
 }
@@ -407,11 +410,14 @@ button, [role="button"] {
   left: 0;
   width: 100%;
   height: 80px;
-  background-image: url('/attached_assets/image_1751893306717.png');
+  background: linear-gradient(90deg, rgba(255, 140, 0, 0.1) 0%, rgba(255, 165, 0, 0.2) 50%, rgba(255, 140, 0, 0.1) 100%);
+  background-image: 
+    /* Traditional Temple Carving Pattern */
+    url("data:image/svg+xml,%3Csvg width='150' height='80' viewBox='0 0 150 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ff8c00' stroke-width='1.5' opacity='0.7'%3E%3Cpath d='M10 40 C20 25, 35 25, 45 40 C55 25, 70 25, 80 40 C90 25, 105 25, 115 40 C125 25, 140 25, 150 40'/%3E%3Cpath d='M0 40 C15 55, 30 55, 45 40 C60 55, 75 55, 90 40 C105 55, 120 55, 135 40 C150 55, 165 55, 180 40'/%3E%3Ccircle cx='25' cy='40' r='8' fill='%23ff8c00' opacity='0.3'/%3E%3Ccircle cx='75' cy='40' r='8' fill='%23ff8c00' opacity='0.3'/%3E%3Ccircle cx='125' cy='40' r='8' fill='%23ff8c00' opacity='0.3'/%3E%3Cpath d='M15 20 L35 20 L35 60 L15 60 Z' fill='none'/%3E%3Cpath d='M65 20 L85 20 L85 60 L65 60 Z' fill='none'/%3E%3Cpath d='M115 20 L135 20 L135 60 L115 60 Z' fill='none'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-position: top center;
   background-size: auto 80px;
-  opacity: 0.2;
+  opacity: 0.3;
   z-index: 5;
   pointer-events: none;
 }
@@ -422,11 +428,14 @@ button, [role="button"] {
   left: 0;
   width: 100%;
   height: 80px;
-  background-image: url('/attached_assets/image_1751893306717.png');
+  background: linear-gradient(90deg, rgba(255, 140, 0, 0.1) 0%, rgba(255, 165, 0, 0.2) 50%, rgba(255, 140, 0, 0.1) 100%);
+  background-image: 
+    /* Traditional Temple Carving Pattern */
+    url("data:image/svg+xml,%3Csvg width='150' height='80' viewBox='0 0 150 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ff8c00' stroke-width='1.5' opacity='0.7'%3E%3Cpath d='M10 40 C20 25, 35 25, 45 40 C55 25, 70 25, 80 40 C90 25, 105 25, 115 40 C125 25, 140 25, 150 40'/%3E%3Cpath d='M0 40 C15 55, 30 55, 45 40 C60 55, 75 55, 90 40 C105 55, 120 55, 135 40 C150 55, 165 55, 180 40'/%3E%3Ccircle cx='25' cy='40' r='8' fill='%23ff8c00' opacity='0.3'/%3E%3Ccircle cx='75' cy='40' r='8' fill='%23ff8c00' opacity='0.3'/%3E%3Ccircle cx='125' cy='40' r='8' fill='%23ff8c00' opacity='0.3'/%3E%3Cpath d='M15 20 L35 20 L35 60 L15 60 Z' fill='none'/%3E%3Cpath d='M65 20 L85 20 L85 60 L65 60 Z' fill='none'/%3E%3Cpath d='M115 20 L135 20 L135 60 L115 60 Z' fill='none'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: repeat-x;
   background-position: bottom center;
   background-size: auto 80px;
-  opacity: 0.2;
+  opacity: 0.3;
   z-index: 5;
   pointer-events: none;
   transform: rotate(180deg);
