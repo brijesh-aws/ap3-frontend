@@ -326,7 +326,7 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="gradient-celestial border-t border-white/20 mt-auto shadow-divine backdrop-blur-sm animate-fade-in">
+    <footer className="gradient-celestial border-t border-white/20 mt-auto shadow-2xl backdrop-blur-sm animate-fade-in">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
