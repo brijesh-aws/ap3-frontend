@@ -168,21 +168,21 @@ export default function Support() {
                   BAPS
                 </span>
               </div>
-              <p className="text-gray-700 font-body text-sm leading-relaxed drop-shadow-md">
+              <p className="text-gray-800 font-body text-sm leading-relaxed drop-shadow-md">
                 Connecting you to spiritual centers worldwide. Find your nearest BAPS temple and join our community.
               </p>
             </div>
             
             <div>
               <h6 className="font-primary font-semibold text-gradient-divine mb-3 text-base tracking-tight drop-shadow-md">Quick Links</h6>
-              <ul className="space-y-1 font-body text-gray-700 text-sm">
+              <ul className="space-y-1 font-body text-gray-800 text-sm">
                 <li><a href="https://baps.org" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600 transition-all hover:underline drop-shadow-md">About BAPS</a></li>
               </ul>
             </div>
             
             <div>
               <h6 className="font-primary font-semibold text-gradient-divine mb-3 text-base tracking-tight drop-shadow-md">Need Help?</h6>
-              <p className="text-gray-700 font-body mb-3 text-sm leading-relaxed drop-shadow-md">
+              <p className="text-gray-800 font-body mb-3 text-sm leading-relaxed drop-shadow-md">
                 Having trouble finding a temple or need assistance? Contact our support team.
               </p>
               <Link to="/support">
@@ -194,7 +194,7 @@ export default function Support() {
           </div>
           
           <div className="border-t border-white/20 mt-4 pt-3 text-center">
-            <p className="font-body text-gray-600 text-sm drop-shadow-md">&copy; 2025 BAPS. All rights reserved. | Built with respect for spiritual traditions.</p>
+            <p className="font-body text-gray-700 text-sm drop-shadow-md">&copy; 2025 BAPS. All rights reserved. | Built with respect for spiritual traditions.</p>
           </div>
         </div>
       </footer>
