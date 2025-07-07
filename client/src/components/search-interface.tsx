@@ -64,7 +64,7 @@ export default function SearchInterface({ onSearch, isLoading }: SearchInterface
   };
 
   return (
-    <div className="card-floating shadow-divine interactive-lift animate-slide-up p-8">
+    <div className="card-floating shadow-divine interactive-lift animate-slide-up p-8 max-w-4xl mx-auto">
       <div className="text-center mb-8">
         <h2 className="text-4xl font-primary font-bold text-gradient mb-4 leading-tight tracking-tight drop-shadow-lg animate-fade-in">
           Find Your Nearest BAPS Mandir
