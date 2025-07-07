@@ -24,20 +24,37 @@ export default function Support() {
   ];
 
   return (
-    <div className="min-h-screen gradient-app-bg font-primary flex flex-col">
+    <div className="min-h-screen gradient-app-bg font-primary flex flex-col relative">
+      {/* Background with Temple Pattern */}
+      <div className="absolute inset-0 -z-10">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: `url('@assets/baps-1-of-1-2-1_1751894210035.webp')` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-amber-50/80 via-orange-50/60 to-amber-50/80" />
+      </div>
+
       {/* Header */}
-      <header className="glass-nav shadow-divine sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <header className="glass-nav shadow-divine sticky top-0 z-50 animate-slide-down relative">
+        {/* Spiritual Background Patterns */}
+        <div className="spiritual-pattern"></div>
+        <div className="lotus-accent"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center justify-between h-20">
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 flex items-center justify-center">
-                <img src={bapsLogo} alt="BAPS Logo" className="w-16 h-16 object-contain drop-shadow-lg" />
+            <div className="flex items-center space-x-6">
+              <div className="w-[72px] h-[72px] flex items-center justify-center bg-white rounded-lg p-1.5 shadow-lg">
+                <img src={bapsLogo} alt="BAPS Logo" className="w-full h-full object-contain" />
               </div>
               <div>
-                <h1 className="text-3xl font-primary font-bold text-gradient-divine tracking-tight drop-shadow-lg">
-                  BAPS Mandir
+                <h1 className="text-4xl font-primary font-bold tracking-tight">
+                  <span className="text-white drop-shadow-2xl shadow-black/50">
+                    BAPS Temple Finder
+                  </span>
                 </h1>
-                <p className="text-sm font-body text-gray-600 tracking-wide drop-shadow-sm">Support</p>
+                <p className="text-lg text-white/90 font-secondary font-light italic tracking-wide whitespace-nowrap drop-shadow-xl shadow-black/60">
+                  Support Center
+                </p>
               </div>
             </div>
             <Link to="/">
@@ -57,7 +74,7 @@ export default function Support() {
             <h1 className="text-5xl font-primary font-bold text-gradient mb-6 leading-tight tracking-tight drop-shadow-lg">
               Get Support
             </h1>
-            <p className="text-xl text-gray-600 font-body max-w-3xl mx-auto leading-relaxed drop-shadow-sm">
+            <p className="text-xl text-amber-800 font-body max-w-3xl mx-auto leading-relaxed drop-shadow-sm">
               Need help finding a temple or have questions about our locator? 
               Our dedicated support team is here to assist you.
             </p>
@@ -74,19 +91,19 @@ export default function Support() {
                   </div>
                   <div className="space-y-6">
                     <div className="flex items-center space-x-4">
-                      <Mail className="text-purple-500 flex-shrink-0" size={24} />
+                      <Mail className="text-amber-600 flex-shrink-0" size={24} />
                       <a 
                         href={`mailto:${member.email}`}
-                        className="text-gray-700 font-body hover:text-purple-600 transition-all hover:underline"
+                        className="text-gray-700 font-body hover:text-amber-600 transition-all hover:underline"
                       >
                         {member.email}
                       </a>
                     </div>
                     <div className="flex items-center space-x-4">
-                      <Phone className="text-purple-500 flex-shrink-0" size={24} />
+                      <Phone className="text-amber-600 flex-shrink-0" size={24} />
                       <a 
                         href={`tel:${member.phone}`}
-                        className="text-gray-700 font-body hover:text-purple-600 transition-all hover:underline"
+                        className="text-gray-700 font-body hover:text-amber-600 transition-all hover:underline"
                       >
                         {member.phone}
                       </a>
@@ -139,20 +156,45 @@ export default function Support() {
       </main>
 
       {/* Footer */}
-      <footer className="gradient-celestial border-t border-white/20 mt-auto shadow-divine backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center">
-            <div className="flex items-center justify-center space-x-4 mb-6">
-              <div className="w-14 h-14 flex items-center justify-center">
-                <img src={bapsLogo} alt="BAPS Logo" className="w-14 h-14 object-contain drop-shadow-lg" />
+      <footer className="gradient-celestial border-t border-white/20 mt-auto shadow-divine backdrop-blur-sm animate-fade-in">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div>
+              <div className="flex items-center space-x-4 mb-3">
+                <div className="w-16 h-16 flex items-center justify-center">
+                  <img src={bapsLogo} alt="BAPS Logo" className="w-16 h-16 object-contain drop-shadow-lg" />
+                </div>
+                <span className="text-xl font-primary font-bold text-gradient tracking-tight drop-shadow-md">
+                  BAPS
+                </span>
               </div>
-              <span className="text-2xl font-primary font-light text-gradient tracking-tight">
-                BAPS
-              </span>
+              <p className="text-gray-700 font-body text-sm leading-relaxed drop-shadow-sm">
+                Connecting you to spiritual centers worldwide. Find your nearest BAPS temple and join our community.
+              </p>
             </div>
-            <p className="font-body text-gray-600">
-              &copy; 2025 BAPS. All rights reserved. | Built with respect for spiritual traditions.
-            </p>
+            
+            <div>
+              <h6 className="font-primary font-semibold text-gradient-divine mb-3 text-base tracking-tight drop-shadow-sm">Quick Links</h6>
+              <ul className="space-y-1 font-body text-gray-700 text-sm">
+                <li><a href="https://baps.org" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600 transition-all hover:underline drop-shadow-sm">About BAPS</a></li>
+              </ul>
+            </div>
+            
+            <div>
+              <h6 className="font-primary font-semibold text-gradient-divine mb-3 text-base tracking-tight drop-shadow-sm">Need Help?</h6>
+              <p className="text-gray-700 font-body mb-3 text-sm leading-relaxed drop-shadow-sm">
+                Having trouble finding a temple or need assistance? Contact our support team.
+              </p>
+              <Link to="/support">
+                <Button className="button-modern gradient-ethereal text-white px-3 py-1 text-sm rounded-lg shadow-card hover:shadow-mystical transition-all font-semibold drop-shadow-md">
+                  Get Support
+                </Button>
+              </Link>
+            </div>
+          </div>
+          
+          <div className="border-t border-white/20 mt-4 pt-3 text-center">
+            <p className="font-body text-gray-600 text-sm drop-shadow-sm">&copy; 2025 BAPS. All rights reserved. | Built with respect for spiritual traditions.</p>
           </div>
         </div>
       </footer>

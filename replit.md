@@ -158,6 +158,13 @@ This is a full-stack web application for finding BAPS temples based on location.
   - Updated header fonts to white for contrast against temple architecture background
   - Replaced logo with official BAPS logo and removed all animations for clean, static appearance
   - Applied glass morphism effects to support button for modern aesthetic balance
+- July 07, 2025. Unified theme colors and consistent layout across all pages:
+  - Updated all button gradients from purple/blue to warm amber/orange temple theme colors
+  - Fixed duplicate gradient definitions causing color inconsistencies
+  - Applied consistent temple background patterns and spiritual gradients to support page
+  - Standardized header styling with temple architecture background and white text
+  - Implemented consistent footer design across home and support pages
+  - Updated text colors throughout application to match temple theme (amber-600, orange-600)
 
 ## User Preferences
 
