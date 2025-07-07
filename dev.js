@@ -56,6 +56,7 @@ process.on('SIGTERM', () => {
 
 console.log('🚀 Server starting...');
 console.log('📍 Once running, open your browser to: http://localhost:5000');
+console.log('   (If port 5000 is busy, the app will automatically use port 5001)');
 console.log('🗺️  Features available:');
 console.log('   • Search temples by zip code or current location');
 console.log('   • Interactive map with BAPS logo markers');
