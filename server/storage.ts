@@ -1,4 +1,5 @@
 import { temples, type Temple, type InsertTemple, type TempleWithDistance } from "@shared/schema";
+import { getTempleImageUrl } from "./imageMapping";
 
 export interface IStorage {
   getTemple(id: number): Promise<Temple | undefined>;
@@ -143,9 +144,10 @@ Winnipeg,"1488 Red River Dr, Howden, MB R5A 1K2 Canada","204-504-2277",,,,`;
     lines.forEach(line => {
       const parts = this.parseCSVLine(line);
       if (parts.length >= 2) {
+        const cityName = parts[0]?.trim() || '';
         const temple: Temple = {
           id: this.currentId++,
-          city: parts[0]?.trim() || '',
+          city: cityName,
           address: parts[1]?.trim() || '',
           phone: (parts[2]?.trim() && parts[2].trim() !== '') ? parts[2].trim() : null,
           fax: (parts[3]?.trim() && parts[3].trim() !== '') ? parts[3].trim() : null,
@@ -154,6 +156,7 @@ Winnipeg,"1488 Red River Dr, Howden, MB R5A 1K2 Canada","204-504-2277",,,,`;
           operatingDays: (parts[6]?.trim() && parts[6].trim() !== '') ? parts[6].trim() : null,
           latitude: null,
           longitude: null,
+          imageUrl: getTempleImageUrl(cityName),
         };
         this.temples.set(temple.id, temple);
       }
@@ -192,7 +195,19 @@ Winnipeg,"1488 Red River Dr, Howden, MB R5A 1K2 Canada","204-504-2277",,,,`;
 
   async createTemple(insertTemple: InsertTemple): Promise<Temple> {
     const id = this.currentId++;
-    const temple: Temple = { ...insertTemple, id };
+    const temple: Temple = { 
+      id,
+      city: insertTemple.city,
+      address: insertTemple.address,
+      phone: insertTemple.phone ?? null,
+      fax: insertTemple.fax ?? null,
+      email: insertTemple.email ?? null,
+      operatingHours: insertTemple.operatingHours ?? null,
+      operatingDays: insertTemple.operatingDays ?? null,
+      latitude: insertTemple.latitude ?? null,
+      longitude: insertTemple.longitude ?? null,
+      imageUrl: getTempleImageUrl(insertTemple.city)
+    };
     this.temples.set(id, temple);
     return temple;
   }

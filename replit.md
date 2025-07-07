@@ -118,6 +118,14 @@ This is a full-stack web application for finding BAPS temples based on location.
   - Fixed main content area with flex-1 to push footer to bottom
   - Ensured footer stays at bottom on all screen sizes and content lengths
   - Maintained responsive design and existing functionality
+- July 07, 2025. Added authentic temple images from BAPS website:
+  - Integrated temple images fetched from official BAPS website (baps.org)
+  - Created image mapping service with 30+ temple images from North America
+  - Updated temple schema to include imageUrl field
+  - Enhanced temple cards to display images alongside temple information
+  - Added temple images to modal detail view with responsive design
+  - Implemented error handling for missing or broken image URLs
+  - Removed all Expo and React Native mobile components, focusing on web-only application
 
 ## User Preferences
 

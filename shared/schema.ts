@@ -13,6 +13,7 @@ export const temples = pgTable("temples", {
   operatingDays: text("operating_days"),
   latitude: real("latitude"),
   longitude: real("longitude"),
+  imageUrl: text("image_url"),
 });
 
 export const insertTempleSchema = createInsertSchema(temples).omit({

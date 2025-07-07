@@ -74,6 +74,19 @@ export default function TempleModal({ temple, isOpen, onClose }: TempleModalProp
             </div>
           </div>
           
+          {temple.imageUrl && (
+            <div className="flex justify-center">
+              <img 
+                src={temple.imageUrl} 
+                alt={`${temple.city} Mandir`}
+                className="w-full max-w-md h-48 object-cover rounded-lg shadow-lg"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+            </div>
+          )}
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <h5 className="font-semibold text-deep-blue mb-3">Contact Information</h5>

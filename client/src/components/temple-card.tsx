@@ -25,7 +25,19 @@ export default function TempleCard({ temple, onViewDetails }: TempleCardProps) {
   return (
     <Card className="hover:bg-gray-50 transition-colors cursor-pointer">
       <CardContent className="p-6">
-        <div className="flex items-start justify-between">
+        <div className="flex items-start space-x-4">
+          {temple.imageUrl && (
+            <div className="flex-shrink-0 w-24 h-24 md:w-32 md:h-32">
+              <img 
+                src={temple.imageUrl} 
+                alt={`${temple.city} Mandir`}
+                className="w-full h-full object-cover rounded-lg shadow-md"
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+            </div>
+          )}
           <div className="flex-1">
             <div className="flex items-center space-x-3 mb-2">
               <h4 className="text-lg font-semibold text-deep-blue">{temple.city}</h4>
