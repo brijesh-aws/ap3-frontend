@@ -13,7 +13,7 @@ import TempleModal from "@/components/temple-modal";
 import TempleMap from "@/components/temple-map";
 import { apiRequest } from "@/lib/queryClient";
 import type { TempleWithDistance } from "@shared/schema";
-import bapsLogo from "@assets/Baps_logo.svg_1751892626225.png";
+import bapsLogo from "@assets/Baps_logo.svg_1751894801919.png";
 
 type SortOption = "distance" | "name" | "state";
 
@@ -293,11 +293,8 @@ function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex items-center justify-between h-24">
           <div className="flex items-center space-x-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-200 to-yellow-200 rounded-full opacity-20 animate-pulse"></div>
-              <div className="w-20 h-20 flex items-center justify-center relative z-10">
-                <img src={bapsLogo} alt="BAPS Logo" className="w-20 h-20 object-contain drop-shadow-xl" />
-              </div>
+            <div className="w-20 h-20 flex items-center justify-center">
+              <img src={bapsLogo} alt="BAPS Logo" className="w-20 h-20 object-contain drop-shadow-xl" />
             </div>
             <div>
               <h1 className="text-4xl font-primary font-bold tracking-tight drop-shadow-lg">
