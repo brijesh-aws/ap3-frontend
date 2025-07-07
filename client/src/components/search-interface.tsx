@@ -65,7 +65,7 @@ export default function SearchInterface({ onSearch, isLoading }: SearchInterface
   return (
     <div className="card-floating shadow-divine interactive-lift animate-slide-up p-8">
       <div className="text-center mb-8">
-        <h2 className="text-4xl font-display font-bold text-gradient mb-4 leading-tight">
+        <h2 className="text-4xl font-primary font-light text-gradient mb-4 leading-tight tracking-tight">
           Find Your Nearest BAPS Mandir
         </h2>
         <p className="text-gray-600 text-xl font-body max-w-2xl mx-auto leading-relaxed">

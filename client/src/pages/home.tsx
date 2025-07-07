@@ -283,7 +283,7 @@ function Header() {
               <img src={bapsLogo} alt="BAPS Logo" className="w-12 h-12 object-contain drop-shadow-lg" />
             </div>
             <div>
-              <h1 className="text-3xl font-display font-bold text-gradient-divine">
+              <h1 className="text-3xl font-primary font-light text-gradient-divine tracking-tight">
                 BAPS Mandir
               </h1>
               <p className="text-sm font-body text-gray-600 tracking-wide">Temple Locator</p>
@@ -304,45 +304,45 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="gradient-bg-header border-t border-gray-100 mt-auto shadow-elegant">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="gradient-celestial border-t border-white/20 mt-auto shadow-divine backdrop-blur-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-8 h-8 flex items-center justify-center">
-                <img src={bapsLogo} alt="BAPS Logo" className="w-8 h-8 object-contain" />
+            <div className="flex items-center space-x-4 mb-6">
+              <div className="w-10 h-10 flex items-center justify-center animate-float">
+                <img src={bapsLogo} alt="BAPS Logo" className="w-10 h-10 object-contain drop-shadow-lg" />
               </div>
-              <span className="text-lg font-bold text-deep-blue" style={{ fontFamily: 'serif' }}>
+              <span className="text-2xl font-primary font-light text-gradient tracking-tight">
                 BAPS
               </span>
             </div>
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-700 font-body text-lg leading-relaxed">
               Connecting you to spiritual centers worldwide. Find your nearest BAPS temple and join our community.
             </p>
           </div>
           
           <div>
-            <h6 className="font-semibold text-deep-blue mb-4">Quick Links</h6>
-            <ul className="space-y-2 text-sm text-gray-600">
-              <li><a href="https://baps.org" target="_blank" rel="noopener noreferrer" className="hover:text-saffron transition-colors">About BAPS</a></li>
+            <h6 className="font-display font-semibold text-gradient-divine mb-6 text-lg">Quick Links</h6>
+            <ul className="space-y-4 font-body text-gray-700">
+              <li><a href="https://baps.org" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600 transition-all hover:underline">About BAPS</a></li>
             </ul>
           </div>
           
           <div>
-            <h6 className="font-semibold text-deep-blue mb-4">Need Help?</h6>
-            <p className="text-gray-600 text-sm mb-4">
+            <h6 className="font-display font-semibold text-gradient-divine mb-6 text-lg">Need Help?</h6>
+            <p className="text-gray-700 font-body text-lg mb-6 leading-relaxed">
               Having trouble finding a temple or need assistance? Contact our support team.
             </p>
             <Link to="/support">
-              <Button className="bg-saffron hover:bg-orange-600 text-white">
+              <Button className="button-modern gradient-ocean text-white px-6 py-3 rounded-xl shadow-card hover:shadow-mystical transition-all font-semibold">
                 Get Support
               </Button>
             </Link>
           </div>
         </div>
         
-        <div className="border-t border-gray-200 mt-8 pt-8 text-center text-sm text-gray-600">
-          <p>&copy; 2024 BAPS. All rights reserved. | Built with respect for spiritual traditions.</p>
+        <div className="border-t border-white/20 mt-12 pt-8 text-center">
+          <p className="font-body text-gray-600">&copy; 2025 BAPS. All rights reserved. | Built with respect for spiritual traditions.</p>
         </div>
       </div>
     </footer>
