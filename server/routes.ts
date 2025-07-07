@@ -34,11 +34,28 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Search temples by location
+  // Search temples by location or text
   app.post("/api/temples/search", async (req, res) => {
     try {
       const searchData = searchSchema.parse(req.body);
       
+      // Handle text-based searches first
+      if (searchData.city) {
+        const temples = await storage.searchTemplesByText(searchData.city, 'city');
+        return res.json(temples);
+      }
+      
+      if (searchData.state) {
+        const temples = await storage.searchTemplesByText(searchData.state, 'state');
+        return res.json(temples);
+      }
+      
+      if (searchData.address) {
+        const temples = await storage.searchTemplesByText(searchData.address, 'address');
+        return res.json(temples);
+      }
+      
+      // Handle location-based searches
       let latitude: number;
       let longitude: number;
       
@@ -54,7 +71,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         latitude = searchData.latitude;
         longitude = searchData.longitude;
       } else {
-        return res.status(400).json({ error: "Either zipcode or latitude/longitude must be provided" });
+        return res.status(400).json({ error: "Please provide zipcode, city, state, address, or latitude/longitude" });
       }
       
       const temples = await storage.searchTemplesByLocation(latitude, longitude, searchData.radius);

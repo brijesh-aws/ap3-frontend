@@ -5,6 +5,7 @@ export interface IStorage {
   getAllTemples(): Promise<Temple[]>;
   createTemple(temple: InsertTemple): Promise<Temple>;
   searchTemplesByLocation(latitude: number, longitude: number, radiusMiles: number): Promise<TempleWithDistance[]>;
+  searchTemplesByText(searchText: string, searchType: 'city' | 'state' | 'address'): Promise<Temple[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -147,11 +148,11 @@ Winnipeg,"1488 Red River Dr, Howden, MB R5A 1K2 Canada","204-504-2277",,,,`;
           id: this.currentId++,
           city: parts[0]?.trim() || '',
           address: parts[1]?.trim() || '',
-          phone: (parts[2]?.trim() && parts[2].trim() !== '') ? parts[2].trim() : null,
-          fax: (parts[3]?.trim() && parts[3].trim() !== '') ? parts[3].trim() : null,
-          email: (parts[4]?.trim() && parts[4].trim() !== '') ? parts[4].trim() : null,
-          operatingHours: (parts[5]?.trim() && parts[5].trim() !== '') ? parts[5].trim() : null,
-          operatingDays: (parts[6]?.trim() && parts[6].trim() !== '') ? parts[6].trim() : null,
+          phone: (parts[2] && parts[2].trim() !== '') ? parts[2].trim() : null,
+          fax: (parts[3] && parts[3].trim() !== '') ? parts[3].trim() : null,
+          email: (parts[4] && parts[4].trim() !== '') ? parts[4].trim() : null,
+          operatingHours: (parts[5] && parts[5].trim() !== '') ? parts[5].trim() : null,
+          operatingDays: (parts[6] && parts[6].trim() !== '') ? parts[6].trim() : null,
           latitude: null,
           longitude: null,
         };
@@ -192,7 +193,18 @@ Winnipeg,"1488 Red River Dr, Howden, MB R5A 1K2 Canada","204-504-2277",,,,`;
 
   async createTemple(insertTemple: InsertTemple): Promise<Temple> {
     const id = this.currentId++;
-    const temple: Temple = { ...insertTemple, id };
+    const temple: Temple = {
+      id,
+      city: insertTemple.city,
+      address: insertTemple.address,
+      phone: insertTemple.phone ?? null,
+      fax: insertTemple.fax ?? null,
+      email: insertTemple.email ?? null,
+      operatingHours: insertTemple.operatingHours ?? null,
+      operatingDays: insertTemple.operatingDays ?? null,
+      latitude: insertTemple.latitude ?? null,
+      longitude: insertTemple.longitude ?? null,
+    };
     this.temples.set(id, temple);
     return temple;
   }
@@ -298,6 +310,31 @@ Winnipeg,"1488 Red River Dr, Howden, MB R5A 1K2 Canada","204-504-2277",,,,`;
     
     // Fallback to a default location if no match found
     return { lat: 39.8283, lng: -98.5795 }; // Geographic center of US
+  }
+
+  async searchTemplesByText(searchText: string, searchType: 'city' | 'state' | 'address'): Promise<Temple[]> {
+    const allTemples = Array.from(this.temples.values());
+    const searchTerm = searchText.toLowerCase().trim();
+    
+    if (!searchTerm) {
+      return [];
+    }
+
+    return allTemples.filter(temple => {
+      switch (searchType) {
+        case 'city':
+          return temple.city.toLowerCase().includes(searchTerm);
+        case 'state':
+          // Extract state from address (assuming format: "..., State ...")
+          const addressParts = temple.address.split(',');
+          const statePart = addressParts[addressParts.length - 2]?.trim() || '';
+          return statePart.toLowerCase().includes(searchTerm);
+        case 'address':
+          return temple.address.toLowerCase().includes(searchTerm);
+        default:
+          return false;
+      }
+    });
   }
 }
 

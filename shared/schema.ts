@@ -22,10 +22,17 @@ export const insertTempleSchema = createInsertSchema(temples).omit({
 export type InsertTemple = z.infer<typeof insertTempleSchema>;
 export type Temple = typeof temples.$inferSelect;
 
+// Update search schema to include new search types
 export const searchSchema = z.object({
   zipcode: z.string().optional(),
   latitude: z.number().optional(),
   longitude: z.number().optional(),
+  city: z.string().optional(),
+  state: z.string().optional(),
+  address: z.string().optional(),
+  address: z.string().optional(),
+  city: z.string().optional(),
+  state: z.string().optional(),
   radius: z.number().default(50), // miles
 });
 
