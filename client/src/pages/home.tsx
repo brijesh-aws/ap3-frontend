@@ -96,10 +96,10 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-warm-gray flex flex-col">
+    <div className="min-h-screen gradient-app-bg font-primary flex flex-col">
       <Header />
       
-      <main className="flex-1">
+      <main className="flex-1 animate-fade-in">
         <div className="py-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SearchInterface onSearch={handleSearch} isLoading={isLoading} />
@@ -275,24 +275,24 @@ export default function Home() {
 
 function Header() {
   return (
-    <header className="bg-white shadow-sm border-b border-gray-200">
+    <header className="glass-nav shadow-divine sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 flex items-center justify-center">
-              <img src={bapsLogo} alt="BAPS Logo" className="w-10 h-10 object-contain" />
+        <div className="flex items-center justify-between h-20">
+          <div className="flex items-center space-x-4">
+            <div className="w-12 h-12 flex items-center justify-center animate-float">
+              <img src={bapsLogo} alt="BAPS Logo" className="w-12 h-12 object-contain drop-shadow-lg" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-deep-blue" style={{ fontFamily: 'serif' }}>
+              <h1 className="text-3xl font-display font-bold text-gradient-divine">
                 BAPS Mandir
               </h1>
-              <p className="text-sm text-gray-600">Locator</p>
+              <p className="text-sm font-body text-gray-600 tracking-wide">Temple Locator</p>
             </div>
           </div>
           <div className="flex items-center space-x-4">
             <Link href="/support">
-              <Button variant="ghost" size="sm">
-                <Info className="h-4 w-4" />
+              <Button variant="ghost" size="sm" className="button-modern glass-card hover:shadow-mystical">
+                <Info className="h-5 w-5 text-purple-600" />
               </Button>
             </Link>
           </div>
@@ -304,7 +304,7 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 mt-auto">
+    <footer className="gradient-bg-header border-t border-gray-100 mt-auto shadow-elegant">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>

@@ -117,7 +117,7 @@ export default function TempleModal({ temple, isOpen, onClose }: TempleModalProp
               <div className="space-y-2">
                 <Button
                   onClick={handleGetDirections}
-                  className="w-full bg-saffron hover:bg-orange-600 text-white"
+                  className="w-full bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 text-white shadow-soft transition-all hover-lift"
                 >
                   <Navigation className="mr-2 h-4 w-4" />
                   Get Directions
@@ -125,7 +125,7 @@ export default function TempleModal({ temple, isOpen, onClose }: TempleModalProp
                 {temple.phone && (
                   <Button
                     onClick={handleCall}
-                    className="w-full bg-deep-blue hover:bg-blue-700 text-white"
+                    className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white shadow-soft transition-all hover-lift"
                   >
                     <Phone className="mr-2 h-4 w-4" />
                     Call Temple
@@ -134,7 +134,7 @@ export default function TempleModal({ temple, isOpen, onClose }: TempleModalProp
                 <Button
                   onClick={handleShare}
                   variant="outline"
-                  className="w-full border-gray-300 hover:bg-gray-50"
+                  className="w-full bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500 text-white border-0 shadow-soft transition-all hover-lift"
                 >
                   <Share2 className="mr-2 h-4 w-4" />
                   Share Location
@@ -143,9 +143,9 @@ export default function TempleModal({ temple, isOpen, onClose }: TempleModalProp
             </div>
           </div>
           
-          <div className="bg-warm-gray rounded-lg p-4">
-            <h5 className="font-semibold text-deep-blue mb-2">About This Temple</h5>
-            <p className="text-gray-600 text-sm">
+          <div className="gradient-bg-temple rounded-lg p-6 shadow-soft">
+            <h5 className="font-semibold text-deep-blue mb-3 text-lg">About This Temple</h5>
+            <p className="text-gray-700 leading-relaxed">
               The {temple.city} BAPS Temple serves the spiritual needs of the local Hindu community and welcomes all visitors. 
               The temple offers daily prayers, cultural programs, and educational activities that promote Hindu values and traditions.
             </p>

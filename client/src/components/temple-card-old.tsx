@@ -1,4 +1,6 @@
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Phone, Mail, Navigation, Info } from "lucide-react";
 import type { TempleWithDistance } from "@shared/schema";
 
@@ -45,17 +47,17 @@ export default function TempleCard({ temple, onViewDetails }: TempleCardProps) {
             </div>
             <p className="text-gray-700 font-body text-lg mb-4 leading-relaxed">{temple.address}</p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
               {temple.phone && (
-                <div className="flex items-center space-x-3 text-gray-600">
-                  <Phone className="h-5 w-5 text-purple-500" />
-                  <span className="font-body">{temple.phone}</span>
+                <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <Phone className="h-4 w-4 text-saffron" />
+                  <span>{temple.phone}</span>
                 </div>
               )}
               {temple.email && (
-                <div className="flex items-center space-x-3 text-gray-600">
-                  <Mail className="h-5 w-5 text-purple-500" />
-                  <span className="font-body truncate">{temple.email}</span>
+                <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <Mail className="h-4 w-4 text-saffron" />
+                  <span className="truncate">{temple.email}</span>
                 </div>
               )}
             </div>
