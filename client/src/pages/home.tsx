@@ -291,9 +291,9 @@ function Header() {
       <div className="lotus-accent"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-6">
-            <div className="w-20 h-20 flex items-center justify-center bg-white rounded-lg p-2 shadow-lg">
+            <div className="w-16 h-16 flex items-center justify-center bg-white rounded-lg p-1 shadow-lg">
               <img src={bapsLogo} alt="BAPS Logo" className="w-full h-full object-contain" />
             </div>
             <div>
