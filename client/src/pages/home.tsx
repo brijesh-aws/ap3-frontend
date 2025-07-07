@@ -285,7 +285,7 @@ export default function Home() {
 
 function Header() {
   return (
-    <header className="glass-nav shadow-divine sticky top-0 z-50 animate-slide-down relative">
+    <header className="glass-nav shadow-2xl sticky top-0 z-50 animate-slide-down relative">
       {/* Spiritual Background Patterns */}
       <div className="spiritual-pattern"></div>
       <div className="lotus-accent"></div>
@@ -319,7 +319,7 @@ function Header() {
       </div>
       
       {/* Bottom Accent Border */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-300 via-orange-400 to-red-400 opacity-60"></div>
+
     </header>
   );
 }

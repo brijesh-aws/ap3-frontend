@@ -35,7 +35,7 @@ export default function Support() {
       </div>
 
       {/* Header */}
-      <header className="glass-nav shadow-divine sticky top-0 z-50 animate-slide-down relative">
+      <header className="glass-nav shadow-2xl sticky top-0 z-50 animate-slide-down relative">
         {/* Spiritual Background Patterns */}
         <div className="spiritual-pattern"></div>
         <div className="lotus-accent"></div>
