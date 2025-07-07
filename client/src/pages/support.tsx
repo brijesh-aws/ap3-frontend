@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Mail, Phone, ArrowLeft } from "lucide-react";
-import bapsLogo from "@assets/image_1751892591180.png";
+import bapsLogo from "@assets/Baps_logo.svg_1751892626225.png";
 
 export default function Support() {
   const supportTeam = [
@@ -30,8 +30,8 @@ export default function Support() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 flex items-center justify-center">
-                <img src={bapsLogo} alt="BAPS Logo" className="w-12 h-12 object-contain drop-shadow-lg" />
+              <div className="w-16 h-16 flex items-center justify-center">
+                <img src={bapsLogo} alt="BAPS Logo" className="w-16 h-16 object-contain drop-shadow-lg" />
               </div>
               <div>
                 <h1 className="text-3xl font-primary font-bold text-gradient-divine tracking-tight drop-shadow-lg">
@@ -143,8 +143,8 @@ export default function Support() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-4 mb-6">
-              <div className="w-10 h-10 flex items-center justify-center animate-float">
-                <img src={bapsLogo} alt="BAPS Logo" className="w-10 h-10 object-contain drop-shadow-lg" />
+              <div className="w-14 h-14 flex items-center justify-center">
+                <img src={bapsLogo} alt="BAPS Logo" className="w-14 h-14 object-contain drop-shadow-lg" />
               </div>
               <span className="text-2xl font-primary font-light text-gradient tracking-tight">
                 BAPS

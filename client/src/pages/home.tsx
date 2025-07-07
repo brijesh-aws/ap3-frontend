@@ -13,7 +13,7 @@ import TempleModal from "@/components/temple-modal";
 import TempleMap from "@/components/temple-map";
 import { apiRequest } from "@/lib/queryClient";
 import type { TempleWithDistance } from "@shared/schema";
-import bapsLogo from "@assets/image_1751892591180.png";
+import bapsLogo from "@assets/Baps_logo.svg_1751892626225.png";
 
 type SortOption = "distance" | "name" | "state";
 
@@ -285,8 +285,8 @@ function Header() {
           <div className="flex items-center space-x-6">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-r from-orange-200 to-yellow-200 rounded-full opacity-20 animate-pulse"></div>
-              <div className="w-16 h-16 flex items-center justify-center relative z-10">
-                <img src={bapsLogo} alt="BAPS Logo" className="w-16 h-16 object-contain drop-shadow-xl" />
+              <div className="w-20 h-20 flex items-center justify-center relative z-10">
+                <img src={bapsLogo} alt="BAPS Logo" className="w-20 h-20 object-contain drop-shadow-xl" />
               </div>
             </div>
             <div>
@@ -324,8 +324,8 @@ function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
             <div className="flex items-center space-x-4 mb-3">
-              <div className="w-12 h-12 flex items-center justify-center">
-                <img src={bapsLogo} alt="BAPS Logo" className="w-12 h-12 object-contain drop-shadow-lg" />
+              <div className="w-16 h-16 flex items-center justify-center">
+                <img src={bapsLogo} alt="BAPS Logo" className="w-16 h-16 object-contain drop-shadow-lg" />
               </div>
               <span className="text-xl font-primary font-bold text-gradient tracking-tight drop-shadow-md">
                 BAPS
