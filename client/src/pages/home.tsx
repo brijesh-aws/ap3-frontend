@@ -4,7 +4,7 @@ import { Link } from "wouter";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import { Filter, MapPin, Info, Users, Map, List } from "lucide-react";
+import { Filter, MapPin, Headphones, Users, Map, List } from "lucide-react";
 import SearchInterface from "@/components/search-interface";
 import LoadingState from "@/components/loading-state";
 import ErrorState from "@/components/error-state";
@@ -310,7 +310,7 @@ function Header() {
           <div className="flex items-center space-x-6">
             <Link href="/support">
               <Button variant="ghost" size="sm" className="button-modern bg-white/20 text-white hover:bg-white/30 border border-white/30 hover:shadow-mystical px-3 py-1.5 text-sm rounded-lg drop-shadow-md backdrop-blur-sm">
-                <Info className="h-4 w-4 mr-1.5" />
+                <Headphones className="h-5 w-5 mr-1.5" />
                 <span className="hidden sm:inline">Support</span>
               </Button>
             </Link>
