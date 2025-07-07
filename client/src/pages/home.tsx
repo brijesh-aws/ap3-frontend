@@ -102,9 +102,7 @@ export default function Home() {
       <div className="traditional-overlay"></div>
       <div className="spiritual-corners"></div>
       
-      {/* Page Temple Borders */}
-      <div className="page-temple-border-top"></div>
-      <div className="page-temple-border-bottom"></div>
+
       
       <Header />
       
@@ -285,9 +283,6 @@ export default function Home() {
 function Header() {
   return (
     <header className="glass-nav shadow-divine sticky top-0 z-50 animate-slide-down relative">
-      {/* Traditional Temple Border */}
-      <div className="temple-border"></div>
-      
       {/* Spiritual Background Patterns */}
       <div className="spiritual-pattern"></div>
       <div className="lotus-accent"></div>
