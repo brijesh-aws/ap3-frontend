@@ -305,10 +305,10 @@ function Header() {
 function Footer() {
   return (
     <footer className="gradient-celestial border-t border-white/20 mt-auto shadow-divine backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
-            <div className="flex items-center space-x-3 mb-2">
+            <div className="flex items-center space-x-3 mb-3">
               <div className="w-8 h-8 flex items-center justify-center animate-float">
                 <img src={bapsLogo} alt="BAPS Logo" className="w-8 h-8 object-contain drop-shadow-lg" />
               </div>
@@ -322,15 +322,15 @@ function Footer() {
           </div>
           
           <div>
-            <h6 className="font-primary font-light text-gradient-divine mb-2 text-base tracking-tight">Quick Links</h6>
+            <h6 className="font-primary font-light text-gradient-divine mb-3 text-base tracking-tight">Quick Links</h6>
             <ul className="space-y-1 font-body text-gray-700 text-sm">
               <li><a href="https://baps.org" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600 transition-all hover:underline">About BAPS</a></li>
             </ul>
           </div>
           
           <div>
-            <h6 className="font-primary font-light text-gradient-divine mb-2 text-base tracking-tight">Need Help?</h6>
-            <p className="text-gray-700 font-body mb-2 text-sm leading-relaxed">
+            <h6 className="font-primary font-light text-gradient-divine mb-3 text-base tracking-tight">Need Help?</h6>
+            <p className="text-gray-700 font-body mb-3 text-sm leading-relaxed">
               Having trouble finding a temple or need assistance? Contact our support team.
             </p>
             <Link to="/support">
