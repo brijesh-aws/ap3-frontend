@@ -320,7 +320,7 @@ button, [role="button"] {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.03;
+  opacity: 0.08;
   z-index: -1;
   background-image: 
     /* Mandala patterns */
@@ -352,7 +352,7 @@ button, [role="button"] {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.02;
+  opacity: 0.05;
   z-index: -1;
   background-image: 
     /* Temple architecture inspired lines */
@@ -380,7 +380,7 @@ button, [role="button"] {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.04;
+  opacity: 0.12;
   z-index: -1;
   background-image: 
     /* Corner flourishes */
@@ -421,11 +421,11 @@ button, [role="button"] {
 
 @keyframes cornerGlow {
   0% { 
-    opacity: 0.04;
+    opacity: 0.12;
     transform: scale(1);
   }
   100% { 
-    opacity: 0.08;
+    opacity: 0.18;
     transform: scale(1.05);
   }
 }
