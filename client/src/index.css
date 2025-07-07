@@ -378,7 +378,7 @@ button, [role="button"] {
   background: 
     linear-gradient(rgba(248, 250, 252, 0.7), rgba(226, 232, 240, 0.7)),
     url('@assets/baps-1-of-1-2-1_1751894210035.webp');
-  background-size: 80%;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
