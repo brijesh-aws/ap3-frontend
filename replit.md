@@ -145,6 +145,13 @@ This is a full-stack web application for finding BAPS temples based on location.
   - Maintained white text color for optimal readability on darker button backgrounds
   - Added subtle hovering fog effect around search icon during input focus
   - Optimized footer spacing and typography for compact, modern appearance
+- July 07, 2025. Added traditional Hindu temple carving borders and layout optimizations:
+  - Integrated authentic temple carving border patterns using user-provided image assets
+  - Applied traditional temple borders to header and page top/bottom areas with proper opacity
+  - Optimized search interface layout: narrowed search card to max-w-5xl for better proportions
+  - Adjusted results section to max-w-6xl to maintain proportional balance
+  - Ensured subtitle text displays on single line with whitespace-nowrap styling
+  - Maintained professional layout while adding spiritual aesthetic elements
 
 ## User Preferences
 

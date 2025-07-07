@@ -69,7 +69,7 @@ export default function SearchInterface({ onSearch, isLoading }: SearchInterface
         <h2 className="text-4xl font-primary font-bold text-gradient mb-4 leading-tight tracking-tight drop-shadow-lg animate-fade-in">
           Find Your Nearest BAPS Mandir
         </h2>
-        <p className="text-gray-600 text-xl font-body max-w-2xl mx-auto leading-relaxed drop-shadow-sm animate-slide-up">
+        <p className="text-gray-600 text-xl font-body max-w-4xl mx-auto leading-relaxed drop-shadow-sm animate-slide-up whitespace-nowrap">
           Enter your zip code or use your current location to discover sacred temples near you
         </p>
       </div>
