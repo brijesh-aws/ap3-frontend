@@ -276,28 +276,50 @@ export default function Home() {
 function Header() {
   return (
     <header className="glass-nav shadow-divine sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 flex items-center justify-center animate-float">
-              <img src={bapsLogo} alt="BAPS Logo" className="w-12 h-12 object-contain drop-shadow-lg" />
+      {/* Spiritual Background Patterns */}
+      <div className="spiritual-pattern"></div>
+      <div className="lotus-accent"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="flex items-center justify-between h-24">
+          <div className="flex items-center space-x-6">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-200 to-yellow-200 rounded-full opacity-20 animate-pulse"></div>
+              <div className="w-16 h-16 flex items-center justify-center animate-float relative z-10">
+                <img src={bapsLogo} alt="BAPS Logo" className="w-16 h-16 object-contain drop-shadow-xl" />
+              </div>
             </div>
             <div>
-              <h1 className="text-3xl font-primary font-light text-gradient-divine tracking-tight">
-                BAPS Mandir
+              <h1 className="text-4xl font-primary font-light tracking-tight">
+                <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-red-500 bg-clip-text text-transparent">
+                  BAPS
+                </span>
+                <span className="ml-2 text-gradient-divine">
+                  Mandir
+                </span>
               </h1>
-              <p className="text-sm font-body text-gray-600 tracking-wide">Temple Locator</p>
+              <p className="text-base font-body text-amber-700 tracking-wide font-medium">
+                🕉️ Sacred Temple Locator
+              </p>
             </div>
           </div>
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
+            <div className="hidden md:flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-orange-100 to-amber-100 rounded-full">
+              <div className="w-3 h-3 bg-gradient-to-r from-orange-400 to-amber-400 rounded-full animate-pulse"></div>
+              <span className="text-sm font-medium text-amber-800">Spiritual Journey</span>
+            </div>
             <Link href="/support">
-              <Button variant="ghost" size="sm" className="button-modern glass-card hover:shadow-mystical">
-                <Info className="h-5 w-5 text-purple-600" />
+              <Button variant="ghost" size="sm" className="button-modern gradient-mystical text-white hover:shadow-mystical px-4 py-2 rounded-xl">
+                <Info className="h-5 w-5 mr-2" />
+                <span className="hidden sm:inline">Support</span>
               </Button>
             </Link>
           </div>
         </div>
       </div>
+      
+      {/* Bottom Accent Border */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-amber-300 via-orange-400 to-red-400 opacity-60"></div>
     </header>
   );
 }
