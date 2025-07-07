@@ -41,8 +41,8 @@ export default function Support() {
               </div>
             </div>
             <Link to="/">
-              <Button className="button-modern gradient-ocean text-white px-6 py-3 rounded-xl shadow-card hover:shadow-mystical transition-all font-semibold">
-                <ArrowLeft className="mr-2 h-4 w-4" />
+              <Button className="button-modern gradient-ethereal text-white px-4 py-2 text-sm rounded-lg shadow-card hover:shadow-mystical transition-all font-semibold">
+                <ArrowLeft className="mr-1.5 h-4 w-4" />
                 Back to Home
               </Button>
             </Link>

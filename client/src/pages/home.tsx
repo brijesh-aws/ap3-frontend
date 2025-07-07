@@ -302,8 +302,8 @@ function Header() {
           </div>
           <div className="flex items-center space-x-6">
             <Link href="/support">
-              <Button variant="ghost" size="sm" className="button-modern gradient-mystical text-white hover:shadow-mystical px-4 py-2 rounded-xl drop-shadow-md">
-                <Info className="h-5 w-5 mr-2" />
+              <Button variant="ghost" size="sm" className="button-modern gradient-ethereal text-white hover:shadow-mystical px-3 py-1.5 text-sm rounded-lg drop-shadow-md">
+                <Info className="h-4 w-4 mr-1.5" />
                 <span className="hidden sm:inline">Support</span>
               </Button>
             </Link>
@@ -349,7 +349,7 @@ function Footer() {
               Having trouble finding a temple or need assistance? Contact our support team.
             </p>
             <Link to="/support">
-              <Button className="button-modern gradient-ocean text-white px-3 py-1 text-sm rounded-lg shadow-card hover:shadow-mystical transition-all font-semibold drop-shadow-md">
+              <Button className="button-modern gradient-ethereal text-white px-3 py-1 text-sm rounded-lg shadow-card hover:shadow-mystical transition-all font-semibold drop-shadow-md">
                 Get Support
               </Button>
             </Link>
