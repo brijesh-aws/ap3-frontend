@@ -13,6 +13,7 @@ interface SearchInterfaceProps {
 export default function SearchInterface({ onSearch, isLoading }: SearchInterfaceProps) {
   const [zipcode, setZipcode] = useState("");
   const [locationLoading, setLocationLoading] = useState(false);
+  const [isInputFocused, setIsInputFocused] = useState(false);
   const { toast } = useToast();
 
   const handleZipcodeSearch = () => {
@@ -75,8 +76,19 @@ export default function SearchInterface({ onSearch, isLoading }: SearchInterface
       
       <div className="max-w-2xl mx-auto">
         <div className="relative mb-8">
-          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
-            <Search className="h-6 w-6 text-purple-700" />
+          <div className={`absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10 transition-all duration-300 ${
+            isInputFocused || zipcode ? 'drop-shadow-lg' : ''
+          }`}>
+            <div className={`relative transition-all duration-300 ${
+              isInputFocused || zipcode ? 'animate-pulse' : ''
+            }`}>
+              <Search className="h-6 w-6 text-purple-700 relative z-10" />
+              <div className={`absolute inset-0 rounded-full transition-all duration-300 ${
+                isInputFocused || zipcode 
+                  ? 'bg-purple-300/40 blur-md scale-150 animate-pulse' 
+                  : 'bg-transparent'
+              }`} />
+            </div>
           </div>
           <Input
             type="text"
@@ -86,6 +98,8 @@ export default function SearchInterface({ onSearch, isLoading }: SearchInterface
             value={zipcode}
             onChange={(e) => setZipcode(e.target.value)}
             onKeyPress={handleKeyPress}
+            onFocus={() => setIsInputFocused(true)}
+            onBlur={() => setIsInputFocused(false)}
             className="pl-14 pr-6 py-6 text-lg font-body border-0 rounded-2xl bg-white/50 backdrop-blur-sm focus:ring-4 focus:ring-purple-200 focus:bg-white shadow-ethereal"
             disabled={isLoading}
             maxLength={5}
