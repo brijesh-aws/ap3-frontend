@@ -86,14 +86,14 @@ button, [role="button"] {
 
 .gradient-mystical {
   background: linear-gradient(135deg, 
-    #ee9ca7 0%, 
-    #ffdde1 100%);
+    #f59e0b 0%, 
+    #d97706 100%);
 }
 
 .gradient-ocean {
   background: linear-gradient(135deg, 
-    #667eea 0%, 
-    #764ba2 100%);
+    #d97706 0%, 
+    #ea580c 100%);
 }
 
 .gradient-sunset {
@@ -117,15 +117,15 @@ button, [role="button"] {
 
 .gradient-ethereal {
   background: linear-gradient(135deg, 
-    #f97316 0%, 
-    #ea580c 100%);
+    #f59e0b 0%, 
+    #d97706 100%);
 }
 
 .gradient-celestial {
   background: linear-gradient(135deg, 
-    #a8e6cf 0%, 
-    #dcedc1 50%, 
-    #ffd3a5 100%);
+    #fbbf24 0%, 
+    #f59e0b 50%, 
+    #d97706 100%);
 }
 
 .gradient-serenity {
@@ -162,8 +162,8 @@ button, [role="button"] {
 
 .shadow-mystical {
   box-shadow: 
-    0 20px 40px -10px rgba(167, 85, 247, 0.15),
-    0 0 30px rgba(167, 85, 247, 0.1);
+    0 20px 40px -10px rgba(217, 119, 6, 0.15),
+    0 0 30px rgba(217, 119, 6, 0.1);
 }
 
 .shadow-card {
@@ -402,7 +402,7 @@ button, [role="button"] {
 }
 
 .text-gradient-divine {
-  background: linear-gradient(135deg, #a855f7 0%, #f97316 100%);
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
