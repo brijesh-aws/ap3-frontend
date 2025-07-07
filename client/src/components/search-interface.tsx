@@ -74,7 +74,7 @@ export default function SearchInterface({ onSearch, isLoading }: SearchInterface
         </p>
       </div>
       
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-lg mx-auto">
         <div className="relative mb-8">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
             <div className="relative">
