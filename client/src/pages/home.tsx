@@ -97,6 +97,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen gradient-app-bg font-primary flex flex-col relative">
+      {/* BAPS Temple Background */}
+      <div className="baps-temple-bg"></div>
+      
       {/* Traditional Background Patterns */}
       <div className="traditional-bg"></div>
       <div className="traditional-overlay"></div>
