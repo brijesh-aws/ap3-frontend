@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Mail, Phone, ArrowLeft } from "lucide-react";
-import bapsLogo from "@assets/Baps_logo.svg_1751892415072.png";
+import bapsLogo from "@assets/image_1751892591180.png";
 
 export default function Support() {
   const supportTeam = [
