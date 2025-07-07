@@ -301,18 +301,18 @@ function Header() {
             </div>
             <div>
               <h1 className="text-4xl font-primary font-bold tracking-tight drop-shadow-lg">
-                <span className="bg-gradient-to-r from-amber-600 via-orange-500 to-red-500 bg-clip-text text-transparent drop-shadow-lg">
+                <span className="text-white drop-shadow-lg">
                   BAPS Mandir
                 </span>
               </h1>
-              <p className="text-base font-body text-amber-700 tracking-wide font-medium drop-shadow-sm">
+              <p className="text-base font-body text-orange-100 tracking-wide font-medium drop-shadow-sm">
                 Sacred Temple Locator
               </p>
             </div>
           </div>
           <div className="flex items-center space-x-6">
             <Link href="/support">
-              <Button variant="ghost" size="sm" className="button-modern gradient-ethereal text-white hover:shadow-mystical px-3 py-1.5 text-sm rounded-lg drop-shadow-md">
+              <Button variant="ghost" size="sm" className="button-modern bg-white/20 text-white hover:bg-white/30 border border-white/30 hover:shadow-mystical px-3 py-1.5 text-sm rounded-lg drop-shadow-md backdrop-blur-sm">
                 <Info className="h-4 w-4 mr-1.5" />
                 <span className="hidden sm:inline">Support</span>
               </Button>
