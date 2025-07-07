@@ -322,14 +322,14 @@ function Footer() {
           </div>
           
           <div>
-            <h6 className="font-display font-semibold text-gradient-divine mb-2 text-base">Quick Links</h6>
+            <h6 className="font-primary font-light text-gradient-divine mb-2 text-base tracking-tight">Quick Links</h6>
             <ul className="space-y-1 font-body text-gray-700 text-sm">
               <li><a href="https://baps.org" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600 transition-all hover:underline">About BAPS</a></li>
             </ul>
           </div>
           
           <div>
-            <h6 className="font-display font-semibold text-gradient-divine mb-2 text-base">Need Help?</h6>
+            <h6 className="font-primary font-light text-gradient-divine mb-2 text-base tracking-tight">Need Help?</h6>
             <p className="text-gray-700 font-body mb-2 text-sm leading-relaxed">
               Having trouble finding a temple or need assistance? Contact our support team.
             </p>
