@@ -297,13 +297,13 @@ function Header() {
               <img src={bapsLogo} alt="BAPS Logo" className="w-full h-full object-contain" />
             </div>
             <div>
-              <h1 className="text-4xl font-primary font-bold tracking-tight drop-shadow-lg">
-                <span className="text-white drop-shadow-lg">
-                  BAPS Mandir
+              <h1 className="text-4xl font-primary font-bold tracking-tight">
+                <span className="text-white drop-shadow-2xl shadow-black/50">
+                  BAPS Temple Finder
                 </span>
               </h1>
-              <p className="text-base font-body text-orange-100 tracking-wide font-medium drop-shadow-sm">
-                Sacred Temple Locator
+              <p className="text-xl text-white/95 font-secondary font-light tracking-wide whitespace-nowrap drop-shadow-xl shadow-black/50">
+                Discover Sacred Spaces Near You
               </p>
             </div>
           </div>
