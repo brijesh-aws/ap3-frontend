@@ -76,16 +76,12 @@ export default function SearchInterface({ onSearch, isLoading }: SearchInterface
       
       <div className="max-w-2xl mx-auto">
         <div className="relative mb-8">
-          <div className={`absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10 transition-all duration-300 ${
-            isInputFocused || zipcode ? 'drop-shadow-lg' : ''
-          }`}>
-            <div className={`relative transition-all duration-300 ${
-              isInputFocused || zipcode ? 'animate-pulse' : ''
-            }`}>
+          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
+            <div className="relative">
               <Search className="h-6 w-6 text-purple-700 relative z-10" />
-              <div className={`absolute inset-0 rounded-full transition-all duration-300 ${
+              <div className={`absolute inset-0 rounded-full transition-all duration-500 ${
                 isInputFocused || zipcode 
-                  ? 'bg-purple-300/40 blur-md scale-150 animate-pulse' 
+                  ? 'bg-purple-300/30 blur-sm scale-125' 
                   : 'bg-transparent'
               }`} />
             </div>
