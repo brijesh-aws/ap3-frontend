@@ -69,7 +69,7 @@ export default function SearchInterface({ onSearch, isLoading }: SearchInterface
         <h2 className="text-4xl font-primary font-bold text-gradient mb-4 leading-tight tracking-tight drop-shadow-lg animate-fade-in">
           Find Your Nearest BAPS Mandir
         </h2>
-        <p className="text-gray-600 text-xl font-body max-w-4xl mx-auto leading-relaxed drop-shadow-sm animate-slide-up whitespace-nowrap">
+        <p className="text-amber-800 text-xl font-body max-w-4xl mx-auto leading-relaxed drop-shadow-sm animate-slide-up whitespace-nowrap">
           Enter your zip code or use your current location to discover sacred temples near you
         </p>
       </div>
@@ -78,10 +78,10 @@ export default function SearchInterface({ onSearch, isLoading }: SearchInterface
         <div className="relative mb-8">
           <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
             <div className="relative">
-              <Search className="h-6 w-6 text-purple-700 relative z-10" />
+              <Search className="h-6 w-6 text-amber-700 relative z-10" />
               <div className={`absolute inset-0 rounded-full transition-all duration-500 ${
                 isInputFocused || zipcode 
-                  ? 'bg-purple-300/30 blur-sm scale-125' 
+                  ? 'bg-amber-300/30 blur-sm scale-125' 
                   : 'bg-transparent'
               }`} />
             </div>
@@ -96,7 +96,7 @@ export default function SearchInterface({ onSearch, isLoading }: SearchInterface
             onKeyPress={handleKeyPress}
             onFocus={() => setIsInputFocused(true)}
             onBlur={() => setIsInputFocused(false)}
-            className="pl-14 pr-6 py-6 text-lg font-body border-0 rounded-2xl bg-white/50 backdrop-blur-sm focus:ring-4 focus:ring-purple-200 focus:bg-white shadow-ethereal"
+            className="pl-14 pr-6 py-6 text-lg font-body border-0 rounded-2xl bg-white/50 backdrop-blur-sm focus:ring-4 focus:ring-amber-200 focus:bg-white shadow-ethereal"
             disabled={isLoading}
             maxLength={5}
             autoComplete="postal-code"

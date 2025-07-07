@@ -302,7 +302,7 @@ function Header() {
                   BAPS Temple Finder
                 </span>
               </h1>
-              <p className="text-xl text-white/95 font-secondary font-light tracking-wide whitespace-nowrap drop-shadow-xl shadow-black/50">
+              <p className="text-lg text-white/90 font-secondary font-light italic tracking-wide whitespace-nowrap drop-shadow-xl shadow-black/60">
                 Discover Sacred Spaces Near You
               </p>
             </div>
