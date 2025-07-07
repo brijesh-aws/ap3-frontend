@@ -305,44 +305,44 @@ function Header() {
 function Footer() {
   return (
     <footer className="gradient-celestial border-t border-white/20 mt-auto shadow-divine backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
-            <div className="flex items-center space-x-4 mb-4">
-              <div className="w-10 h-10 flex items-center justify-center animate-float">
-                <img src={bapsLogo} alt="BAPS Logo" className="w-10 h-10 object-contain drop-shadow-lg" />
+            <div className="flex items-center space-x-3 mb-2">
+              <div className="w-8 h-8 flex items-center justify-center animate-float">
+                <img src={bapsLogo} alt="BAPS Logo" className="w-8 h-8 object-contain drop-shadow-lg" />
               </div>
-              <span className="text-2xl font-primary font-light text-gradient tracking-tight">
+              <span className="text-xl font-primary font-light text-gradient tracking-tight">
                 BAPS
               </span>
             </div>
-            <p className="text-gray-700 font-body text-lg leading-relaxed">
+            <p className="text-gray-700 font-body text-sm leading-relaxed">
               Connecting you to spiritual centers worldwide. Find your nearest BAPS temple and join our community.
             </p>
           </div>
           
           <div>
-            <h6 className="font-display font-semibold text-gradient-divine mb-4 text-lg">Quick Links</h6>
-            <ul className="space-y-2 font-body text-gray-700">
+            <h6 className="font-display font-semibold text-gradient-divine mb-2 text-base">Quick Links</h6>
+            <ul className="space-y-1 font-body text-gray-700 text-sm">
               <li><a href="https://baps.org" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600 transition-all hover:underline">About BAPS</a></li>
             </ul>
           </div>
           
           <div>
-            <h6 className="font-display font-semibold text-gradient-divine mb-4 text-lg">Need Help?</h6>
-            <p className="text-gray-700 font-body mb-4 leading-relaxed">
+            <h6 className="font-display font-semibold text-gradient-divine mb-2 text-base">Need Help?</h6>
+            <p className="text-gray-700 font-body mb-2 text-sm leading-relaxed">
               Having trouble finding a temple or need assistance? Contact our support team.
             </p>
             <Link to="/support">
-              <Button className="button-modern gradient-ocean text-white px-4 py-2 rounded-xl shadow-card hover:shadow-mystical transition-all font-semibold">
+              <Button className="button-modern gradient-ocean text-white px-3 py-1 text-sm rounded-lg shadow-card hover:shadow-mystical transition-all font-semibold">
                 Get Support
               </Button>
             </Link>
           </div>
         </div>
         
-        <div className="border-t border-white/20 mt-6 pt-4 text-center">
-          <p className="font-body text-gray-600">&copy; 2025 BAPS. All rights reserved. | Built with respect for spiritual traditions.</p>
+        <div className="border-t border-white/20 mt-4 pt-3 text-center">
+          <p className="font-body text-gray-600 text-sm">&copy; 2025 BAPS. All rights reserved. | Built with respect for spiritual traditions.</p>
         </div>
       </div>
     </footer>
