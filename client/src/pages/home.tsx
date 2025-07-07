@@ -305,10 +305,10 @@ function Header() {
 function Footer() {
   return (
     <footer className="gradient-celestial border-t border-white/20 mt-auto shadow-divine backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <div className="flex items-center space-x-4 mb-6">
+            <div className="flex items-center space-x-4 mb-4">
               <div className="w-10 h-10 flex items-center justify-center animate-float">
                 <img src={bapsLogo} alt="BAPS Logo" className="w-10 h-10 object-contain drop-shadow-lg" />
               </div>
@@ -322,26 +322,26 @@ function Footer() {
           </div>
           
           <div>
-            <h6 className="font-display font-semibold text-gradient-divine mb-6 text-lg">Quick Links</h6>
-            <ul className="space-y-4 font-body text-gray-700">
+            <h6 className="font-display font-semibold text-gradient-divine mb-4 text-lg">Quick Links</h6>
+            <ul className="space-y-2 font-body text-gray-700">
               <li><a href="https://baps.org" target="_blank" rel="noopener noreferrer" className="hover:text-purple-600 transition-all hover:underline">About BAPS</a></li>
             </ul>
           </div>
           
           <div>
-            <h6 className="font-display font-semibold text-gradient-divine mb-6 text-lg">Need Help?</h6>
-            <p className="text-gray-700 font-body text-lg mb-6 leading-relaxed">
+            <h6 className="font-display font-semibold text-gradient-divine mb-4 text-lg">Need Help?</h6>
+            <p className="text-gray-700 font-body mb-4 leading-relaxed">
               Having trouble finding a temple or need assistance? Contact our support team.
             </p>
             <Link to="/support">
-              <Button className="button-modern gradient-ocean text-white px-6 py-3 rounded-xl shadow-card hover:shadow-mystical transition-all font-semibold">
+              <Button className="button-modern gradient-ocean text-white px-4 py-2 rounded-xl shadow-card hover:shadow-mystical transition-all font-semibold">
                 Get Support
               </Button>
             </Link>
           </div>
         </div>
         
-        <div className="border-t border-white/20 mt-12 pt-8 text-center">
+        <div className="border-t border-white/20 mt-6 pt-4 text-center">
           <p className="font-body text-gray-600">&copy; 2025 BAPS. All rights reserved. | Built with respect for spiritual traditions.</p>
         </div>
       </div>
