@@ -75,8 +75,8 @@ export default function SearchInterface({ onSearch, isLoading }: SearchInterface
       
       <div className="max-w-2xl mx-auto">
         <div className="relative mb-8">
-          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-            <Search className="h-6 w-6 text-purple-400" />
+          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none z-10">
+            <Search className="h-6 w-6 text-purple-700" />
           </div>
           <Input
             type="text"
