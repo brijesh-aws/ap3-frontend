@@ -22,9 +22,6 @@ export default function Home() {
     zipcode?: string;
     latitude?: number;
     longitude?: number;
-    city?: string;
-    state?: string;
-    address?: string;
   } | null>(null);
   const [sortBy, setSortBy] = useState<SortOption>("distance");
   const [selectedTemple, setSelectedTemple] = useState<TempleWithDistance | null>(null);
@@ -47,7 +44,7 @@ export default function Home() {
     enabled: !!searchParams,
   });
 
-  const handleSearch = (params: { zipcode?: string; latitude?: number; longitude?: number; city?: string; state?: string; address?: string }) => {
+  const handleSearch = (params: { zipcode?: string; latitude?: number; longitude?: number }) => {
     setSearchParams(params);
   };
 

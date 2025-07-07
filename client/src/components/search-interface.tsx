@@ -2,33 +2,31 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Search, MapPin, Loader2 } from "lucide-react";
 import { getCurrentLocation, validateZipcode } from "@/lib/geocoding";
 import { useToast } from "@/hooks/use-toast";
 
 interface SearchInterfaceProps {
-  onSearch: (params: { zipcode?: string; latitude?: number; longitude?: number; city?: string; state?: string; address?: string }) => void;
+  onSearch: (params: { zipcode?: string; latitude?: number; longitude?: number }) => void;
   isLoading: boolean;
 }
 
 export default function SearchInterface({ onSearch, isLoading }: SearchInterfaceProps) {
-  const [searchType, setSearchType] = useState<"zipcode" | "city" | "state" | "address">("zipcode");
-  const [searchValue, setSearchValue] = useState("");
+  const [zipcode, setZipcode] = useState("");
   const [locationLoading, setLocationLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleSearch = () => {
-    if (!searchValue.trim()) {
+  const handleZipcodeSearch = () => {
+    if (!zipcode.trim()) {
       toast({
-        title: `Please enter a ${searchType}`,
-        description: `Enter a ${searchType} to find temples`,
+        title: "Please enter a zip code",
+        description: "Enter your zip code to find nearby temples",
         variant: "destructive",
       });
       return;
     }
 
-    if (searchType === "zipcode" && !validateZipcode(searchValue)) {
+    if (!validateZipcode(zipcode)) {
       toast({
         title: "Invalid zip code",
         description: "Please enter a valid 5-digit US zip code",
@@ -37,9 +35,7 @@ export default function SearchInterface({ onSearch, isLoading }: SearchInterface
       return;
     }
 
-    const searchParams: any = {};
-    searchParams[searchType] = searchValue.trim();
-    onSearch(searchParams);
+    onSearch({ zipcode: zipcode.trim() });
   };
 
   const handleLocationSearch = async () => {
@@ -61,22 +57,8 @@ export default function SearchInterface({ onSearch, isLoading }: SearchInterface
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === "Enter") {
-      handleSearch();
+      handleZipcodeSearch();
     }
-  };
-
-  const getPlaceholder = () => {
-    switch (searchType) {
-      case "zipcode": return "Enter zip code (e.g., 12345)";
-      case "city": return "Enter city name (e.g., Boston)";
-      case "state": return "Enter state (e.g., California, CA)";
-      case "address": return "Enter street address";
-      default: return "Enter search term";
-    }
-  };
-
-  const getInputMode = () => {
-    return searchType === "zipcode" ? "numeric" : "text";
   };
 
   return (
@@ -87,92 +69,65 @@ export default function SearchInterface({ onSearch, isLoading }: SearchInterface
             Find Your Nearest BAPS Mandir
           </h2>
           <p className="text-gray-600">
-            Search by zip code, city, state, address, or use your current location
+            Enter your zip code or use your current location to discover temples near you
           </p>
         </div>
         
-        <div className="max-w-lg mx-auto space-y-4">
-          {/* Search Type Selector */}
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Search by:
-            </label>
-            <Select value={searchType} onValueChange={(value: "zipcode" | "city" | "state" | "address") => {
-              setSearchType(value);
-              setSearchValue("");
-            }}>
-              <SelectTrigger>
-                <SelectValue placeholder="Select search type" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="zipcode">Zip Code</SelectItem>
-                <SelectItem value="city">City</SelectItem>
-                <SelectItem value="state">State</SelectItem>
-                <SelectItem value="address">Address</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* Search Input */}
+        <div className="max-w-lg mx-auto">
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
               <Search className="h-5 w-5 text-gray-400" />
             </div>
             <Input
               type="text"
-              inputMode={getInputMode()}
-              placeholder={getPlaceholder()}
-              value={searchValue}
-              onChange={(e) => setSearchValue(e.target.value)}
+              inputMode="numeric"
+              pattern="[0-9]*"
+              placeholder="Enter zip code (e.g., 10001)"
+              value={zipcode}
+              onChange={(e) => setZipcode(e.target.value)}
               onKeyPress={handleKeyPress}
-              className="pl-10 pr-20 h-12 text-lg border-gray-300 focus:border-saffron focus:ring-saffron"
+              className="pl-10 py-3 text-base focus:ring-2 focus:ring-saffron focus:border-saffron"
               disabled={isLoading}
+              maxLength={5}
+              autoComplete="postal-code"
             />
-            <div className="absolute inset-y-0 right-0 flex items-center pr-3">
-              <Button
-                onClick={handleSearch}
-                disabled={isLoading}
-                className="bg-saffron hover:bg-orange-600 text-white px-4 py-2 text-sm"
-              >
-                {isLoading ? (
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                ) : (
-                  "Search"
-                )}
-              </Button>
-            </div>
           </div>
-
-          {/* Location Button */}
-          <div className="text-center">
+          
+          <div className="flex items-center justify-center mt-4 space-x-4">
             <Button
-              variant="outline"
+              onClick={handleZipcodeSearch}
+              disabled={isLoading}
+              className="bg-saffron hover:bg-orange-600 text-white px-6 py-3 font-medium touch-manipulation"
+            >
+              {isLoading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Searching...
+                </>
+              ) : (
+                "Search Temples"
+              )}
+            </Button>
+            
+            <div className="text-gray-400">or</div>
+            
+            <Button
               onClick={handleLocationSearch}
-              disabled={locationLoading || isLoading}
-              className="border-saffron text-saffron hover:bg-saffron hover:text-white"
+              disabled={isLoading || locationLoading}
+              className="bg-deep-blue hover:bg-blue-700 text-white px-6 py-3 font-medium touch-manipulation"
             >
               {locationLoading ? (
                 <>
-                  <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   Getting Location...
                 </>
               ) : (
                 <>
-                  <MapPin className="h-4 w-4 mr-2" />
-                  Use Current Location
+                  <MapPin className="mr-2 h-4 w-4" />
+                  Use My Location
                 </>
               )}
             </Button>
-          </div>
-
-          {/* Search Examples */}
-          <div className="text-center text-sm text-gray-500">
-            <p>
-              {searchType === "zipcode" && "Example: 12345, 90210, 10001"}
-              {searchType === "city" && "Example: Boston, Atlanta, Los Angeles"}
-              {searchType === "state" && "Example: California, NY, Texas"}
-              {searchType === "address" && "Example: 123 Main Street"}
-            </p>
           </div>
         </div>
       </CardContent>
